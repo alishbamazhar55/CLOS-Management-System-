@@ -86,6 +86,7 @@ namespace DBMIDPROJECT
             this.label1.Size = new System.Drawing.Size(88, 42);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -96,6 +97,7 @@ namespace DBMIDPROJECT
             this.label2.Size = new System.Drawing.Size(178, 42);
             this.label2.TabIndex = 4;
             this.label2.Text = "DateUpdated";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -106,6 +108,7 @@ namespace DBMIDPROJECT
             this.label3.Size = new System.Drawing.Size(168, 42);
             this.label3.TabIndex = 5;
             this.label3.Text = "DateCreated";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox1
             // 
@@ -113,6 +116,7 @@ namespace DBMIDPROJECT
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(270, 26);
             this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -120,6 +124,7 @@ namespace DBMIDPROJECT
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(246, 26);
             this.textBox2.TabIndex = 7;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -127,6 +132,7 @@ namespace DBMIDPROJECT
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(237, 26);
             this.textBox3.TabIndex = 8;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
@@ -138,6 +144,7 @@ namespace DBMIDPROJECT
             this.label4.Size = new System.Drawing.Size(468, 64);
             this.label4.TabIndex = 9;
             this.label4.Text = "Update And Delete CLO";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox4
             // 
@@ -145,6 +152,7 @@ namespace DBMIDPROJECT
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(222, 26);
             this.textBox4.TabIndex = 10;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label5
             // 
@@ -155,6 +163,7 @@ namespace DBMIDPROJECT
             this.label5.Size = new System.Drawing.Size(147, 42);
             this.label5.TabIndex = 11;
             this.label5.Text = "Enter Text";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // button3
             // 

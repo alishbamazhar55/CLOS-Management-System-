@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DBMIDPROJECT
 {
-    public partial class ViewRubric : UserControl
+    public partial class AssessmentView : UserControl
     {
-        public ViewRubric()
+        public AssessmentView()
         {
             InitializeComponent();
             showData();
@@ -27,10 +27,10 @@ namespace DBMIDPROJECT
             }
         }
 
-        public void showAllData()
+        public void showALLData()
         {
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("Select * from Rubric  ", con);
+            SqlCommand cmd = new SqlCommand("Select * from Assessment  ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -38,12 +38,11 @@ namespace DBMIDPROJECT
             sizeset();
             dataGridView1.Refresh();
         }
-
 
         public void showData()
         {
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("Select * from Rubric  WHere Details NOT LIKE '!%' ", con);
+            SqlCommand cmd = new SqlCommand("Select * from Assessment  WHere Title NOT LIKE '!%' ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -52,15 +51,9 @@ namespace DBMIDPROJECT
             dataGridView1.Refresh();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void AssessmentView_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            label4.Show();
-            showAllData();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,10 +62,16 @@ namespace DBMIDPROJECT
             showData();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            showALLData();
+            label4.Show();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             var con = Configuration.getInstance().getConnection();
-            string query = "SELECT * FROM Rubric WHERE Id LIKE @SearchText OR Details LIKE @SearchText OR CloId LIKE @SearchText  ";
+            string query = "SELECT * FROM Assessment WHERE Id LIKE @SearchText OR Title LIKE @SearchText OR DateCreated LIKE @SearchText OR TotalMarks LIKE @SearchText OR TotalWeightage LIKE @SearchText ";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -81,30 +80,11 @@ namespace DBMIDPROJECT
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
+
             }
 
             sizeset();
-            dataGridView1.Refresh();
             textBox1.Clear();
-        }
-
-        private void ViewRubric_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 

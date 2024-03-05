@@ -16,6 +16,8 @@ namespace DBMIDPROJECT
         {
             InitializeComponent();
             assessment1.Hide();
+            assessmentView1.Hide();
+            deleteAssessment1.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -23,6 +25,33 @@ namespace DBMIDPROJECT
             assessment1.Show();
             assessment1.BringToFront();
           
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            assessmentView1.Show();
+            assessmentView1.BringToFront();
+            assessmentView1.showData();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            deleteAssessment1.Show();
+            deleteAssessment1.BringToFront();
+            deleteAssessment1.showData();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form f = new Form1();
+            f.Show();
+            this.Hide();
+
+        }
+
+        private void deleteAssessment1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

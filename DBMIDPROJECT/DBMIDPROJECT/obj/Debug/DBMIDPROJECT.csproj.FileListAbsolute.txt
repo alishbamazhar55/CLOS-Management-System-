@@ -25,3 +25,6 @@ C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\Us
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.g.resources
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.Assessment.resources
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.AssessmentsForm.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.AssessmentView.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.csproj.AssemblyReference.cache
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.DeleteAssessment.resources

@@ -40,8 +40,8 @@ namespace DBMIDPROJECT
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label2
@@ -145,16 +145,6 @@ namespace DBMIDPROJECT
             this.panel3.Size = new System.Drawing.Size(237, 1);
             this.panel3.TabIndex = 14;
             // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.RosyBrown;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.UpArrow;
-            this.textBox4.Location = new System.Drawing.Point(358, 384);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(237, 19);
-            this.textBox4.TabIndex = 13;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -166,14 +156,22 @@ namespace DBMIDPROJECT
             this.label4.TabIndex = 15;
             this.label4.Text = "ADD RUBRICS";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(358, 372);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(237, 28);
+            this.comboBox1.TabIndex = 16;
+            // 
             // CLO1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.panel1);
@@ -203,7 +201,7 @@ namespace DBMIDPROJECT
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

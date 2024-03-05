@@ -62,6 +62,12 @@
     <Compile Include="AssessmentsForm.Designer.cs">
       <DependentUpon>AssessmentsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssessmentView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AssessmentView.Designer.cs">
+      <DependentUpon>AssessmentView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CLO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
       <DependentUpon>Clo3.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuration.cs" />
+    <Compile Include="DeleteAssessment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteAssessment.Designer.cs">
+      <DependentUpon>DeleteAssessment.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteRubric.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +158,9 @@
     <EmbeddedResource Include="AssessmentsForm.resx">
       <DependentUpon>AssessmentsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentView.resx">
+      <DependentUpon>AssessmentView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CLO.resx">
       <DependentUpon>CLO.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clo3.resx">
       <DependentUpon>Clo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAssessment.resx">
+      <DependentUpon>DeleteAssessment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteRubric.resx">
       <DependentUpon>DeleteRubric.cs</DependentUpon>

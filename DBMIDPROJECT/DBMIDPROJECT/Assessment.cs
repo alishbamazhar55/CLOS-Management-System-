@@ -74,8 +74,7 @@ namespace DBMIDPROJECT
                 {
                     var con = Configuration.getInstance().getConnection();
 
-                    SqlCommand cmdAssessment = new SqlCommand("INSERT INTO Assessment (Id,Title, DateCreated, TotalMarks, TotalWeightage) VALUES (@Id,@Title, @DateCreated, @TotalMarks, @TotalWeightage)", con);
-                    cmdAssessment.Parameters.AddWithValue("@Id", textBox2.Text);
+                    SqlCommand cmdAssessment = new SqlCommand("INSERT INTO Assessment (Title, DateCreated, TotalMarks, TotalWeightage) VALUES (@Title, @DateCreated, @TotalMarks, @TotalWeightage)", con);
                     cmdAssessment.Parameters.AddWithValue("@Title", textBox3.Text);
                     cmdAssessment.Parameters.AddWithValue("@DateCreated",date );
                     cmdAssessment.Parameters.AddWithValue("@TotalMarks", textBox5.Text);
@@ -94,7 +93,6 @@ namespace DBMIDPROJECT
         private void cleardata()
         {
             textBox1.Text = "";
-            textBox2.Text = "";
             textBox3.Text = "";
             textBox5.Text = "";
 
@@ -140,6 +138,11 @@ namespace DBMIDPROJECT
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Assessment_Load(object sender, EventArgs e)
         {
 
         }

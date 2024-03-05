@@ -16,6 +16,7 @@ namespace DBMIDPROJECT
         public CLO1()
         {
             InitializeComponent();
+            l1();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace DBMIDPROJECT
                     SqlCommand cmdCLO = new SqlCommand("INSERT INTO Rubric (Id, Details, CloId) VALUES (@Id, @Details, @CloId)", con);
                     cmdCLO.Parameters.AddWithValue("@Id", RUBRICid);
                     cmdCLO.Parameters.AddWithValue("@Details", textBox3.Text);
-                    cmdCLO.Parameters.AddWithValue("@CloId", textBox4.Text);
+                    cmdCLO.Parameters.AddWithValue("@CloId", comboBox1.Text);
                     cmdCLO.ExecuteNonQuery();
 
                     MessageBox.Show("Rubrics Successfully added");
@@ -49,12 +50,38 @@ namespace DBMIDPROJECT
                 }
             }
             }
+        void l1()
+        {
+            try
+            {
+                var con = Configuration.getInstance().getConnection();
+
+                // Clear existing items in the ComboBox
+                comboBox1.Items.Clear();
+
+                // Fetch CLO IDs from the CLO table
+                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Id FROM CLO", con);
+                SqlDataReader reader = cmdFetchCLOIds.ExecuteReader();
+
+                // Loop through the result set and add CLO IDs to the ComboBox
+                while (reader.Read())
+                {
+                    comboBox1.Items.Add(reader["Id"].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching CLO IDs: " + ex.Message);
+            }
+
+        }
         private void cleardata()
         {
 
             textBox2.Text = "";
             textBox3.Text = "";
-            textBox4.Text = "";
+          
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
