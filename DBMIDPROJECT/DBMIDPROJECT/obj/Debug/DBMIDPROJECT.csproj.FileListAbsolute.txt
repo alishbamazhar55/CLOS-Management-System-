@@ -18,4 +18,10 @@ C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DB
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.Rubric.resources
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.ViewRubric.resources
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.DeleteRubric.resources
-C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.csproj.AssemblyReference.cache
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\UserControl4.g.cs
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT_MarkupCompile.cache
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT_MarkupCompile.lref
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\UserControl4.baml
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.g.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.Assessment.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.AssessmentsForm.resources

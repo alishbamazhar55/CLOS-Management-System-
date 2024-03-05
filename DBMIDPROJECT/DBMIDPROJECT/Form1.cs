@@ -53,5 +53,12 @@ namespace DBMIDPROJECT
             f.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form f = new AssessmentsForm();
+            f.Show();
+            this.Hide();
+        }
     }
 }

@@ -15,6 +15,14 @@ namespace DBMIDPROJECT
         public AssessmentsForm()
         {
             InitializeComponent();
+            assessment1.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            assessment1.Show();
+            assessment1.BringToFront();
+          
         }
     }
 }

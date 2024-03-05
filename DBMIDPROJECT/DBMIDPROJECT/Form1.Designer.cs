@@ -112,19 +112,20 @@ namespace DBMIDPROJECT
             this.button5.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button5.Location = new System.Drawing.Point(285, 450);
+            this.button5.Location = new System.Drawing.Point(285, 177);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(183, 94);
             this.button5.TabIndex = 5;
             this.button5.Text = "Manage Assessments";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button6.Location = new System.Drawing.Point(285, 178);
+            this.button6.Location = new System.Drawing.Point(285, 451);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(183, 93);
             this.button6.TabIndex = 6;
