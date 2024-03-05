@@ -46,5 +46,12 @@ namespace DBMIDPROJECT
             f.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form f = new Rubric();
+            f.Show();
+            this.Hide();
+        }
     }
 }

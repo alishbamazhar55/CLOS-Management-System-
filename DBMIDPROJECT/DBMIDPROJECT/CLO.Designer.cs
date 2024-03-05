@@ -32,14 +32,19 @@ namespace DBMIDPROJECT
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.clo21 = new DBMIDPROJECT.Clo2();
-            this.clO11 = new DBMIDPROJECT.CLO1();
-            this.clo31 = new DBMIDPROJECT.Clo3();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.clo32 = new DBMIDPROJECT.Clo3();
+            this.clo22 = new DBMIDPROJECT.Clo2();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +71,7 @@ namespace DBMIDPROJECT
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(22, 296);
+            this.button4.Location = new System.Drawing.Point(21, 208);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(190, 66);
             this.button4.TabIndex = 5;
@@ -74,19 +79,9 @@ namespace DBMIDPROJECT
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(22, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 66);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "ADD CLO\'S";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(22, 423);
+            this.button2.Location = new System.Drawing.Point(21, 340);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(190, 66);
             this.button2.TabIndex = 7;
@@ -114,29 +109,83 @@ namespace DBMIDPROJECT
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // clo21
+            // button1
             // 
-            this.clo21.BackColor = System.Drawing.Color.RosyBrown;
-            this.clo21.Location = new System.Drawing.Point(251, -2);
-            this.clo21.Name = "clo21";
-            this.clo21.Size = new System.Drawing.Size(964, 730);
-            this.clo21.TabIndex = 10;
+            this.button1.Location = new System.Drawing.Point(34, 240);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(186, 61);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Add and VIew CLOS";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // clO11
+            // button5
             // 
-            this.clO11.BackColor = System.Drawing.Color.RosyBrown;
-            this.clO11.Location = new System.Drawing.Point(251, 1);
-            this.clO11.Name = "clO11";
-            this.clO11.Size = new System.Drawing.Size(964, 727);
-            this.clO11.TabIndex = 9;
+            this.button5.Location = new System.Drawing.Point(34, 362);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(186, 58);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Update/Delete CLOS";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // clo31
+            // button6
             // 
-            this.clo31.BackColor = System.Drawing.Color.RosyBrown;
-            this.clo31.Location = new System.Drawing.Point(251, 1);
-            this.clo31.Name = "clo31";
-            this.clo31.Size = new System.Drawing.Size(964, 727);
-            this.clo31.TabIndex = 11;
+            this.button6.Location = new System.Drawing.Point(12, 630);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(130, 58);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Back";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(225, 50);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Manage CLO\'S";
+            // 
+            // clo32
+            // 
+            this.clo32.BackColor = System.Drawing.Color.RosyBrown;
+            this.clo32.Location = new System.Drawing.Point(254, -5);
+            this.clo32.Name = "clo32";
+            this.clo32.Size = new System.Drawing.Size(964, 739);
+            this.clo32.TabIndex = 1;
+            // 
+            // clo22
+            // 
+            this.clo22.BackColor = System.Drawing.Color.RosyBrown;
+            this.clo22.Location = new System.Drawing.Point(243, -5);
+            this.clo22.Name = "clo22";
+            this.clo22.Size = new System.Drawing.Size(975, 728);
+            this.clo22.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe Print", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(446, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(575, 85);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Management of CLO\'S";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::DBMIDPROJECT.Properties.Resources.learning_outcomes_header3x_removebg_preview;
+            this.pictureBox2.Location = new System.Drawing.Point(390, 223);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(692, 465);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // CLO
             // 
@@ -144,20 +193,19 @@ namespace DBMIDPROJECT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1214, 724);
-            this.Controls.Add(this.clo31);
-            this.Controls.Add(this.clo21);
-            this.Controls.Add(this.clO11);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.clo32);
+            this.Controls.Add(this.clo22);
             this.Name = "CLO";
             this.Text = "CLO";
             this.Load += new System.EventHandler(this.CLO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,11 +217,17 @@ namespace DBMIDPROJECT
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private CLO1 clO11;
         private Clo2 clo21;
         private Clo3 clo31;
+        private Clo2 clo22;
+        private Clo3 clo32;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

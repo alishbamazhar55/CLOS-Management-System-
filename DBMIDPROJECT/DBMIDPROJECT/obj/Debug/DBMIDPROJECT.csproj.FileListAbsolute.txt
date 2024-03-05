@@ -15,4 +15,7 @@ C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DB
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.CLO1.resources
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.Clo2.resources
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.Clo3.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.Rubric.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.ViewRubric.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.DeleteRubric.resources
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.csproj.AssemblyReference.cache

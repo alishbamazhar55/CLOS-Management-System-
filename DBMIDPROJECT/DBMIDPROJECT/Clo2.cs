@@ -49,7 +49,7 @@ namespace DBMIDPROJECT
         public void showData()
         {
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("Select * from Clo ", con);
+            SqlCommand cmd = new SqlCommand("Select * from Clo  WHere Name NOT LIKE '!%' ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -139,5 +139,25 @@ namespace DBMIDPROJECT
             textBox3.Text = "";
          }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                MessageBox.Show("Please select a CLO to delete.");
+                return;
+            }
+
+            var con = Configuration.getInstance().getConnection();
+
+            SqlCommand updateCmd = new SqlCommand("UPDATE Clo SET Name = '!' + Name WHERE Id = @Id", con);
+            updateCmd.Parameters.AddWithValue("@Id", id);
+            updateCmd.ExecuteNonQuery();
+
+
+            MessageBox.Show("Successfully deleted and status changed to Inactive");
+
+            cleardata();
+            showData();
+        }
     }
 }

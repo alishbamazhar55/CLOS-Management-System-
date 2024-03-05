@@ -20,11 +20,11 @@ namespace DBMIDPROJECT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string cloName = textBox2.Text.Trim();
+            string RUBRICid = textBox2.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(cloName))
+            if (string.IsNullOrWhiteSpace(RUBRICid))
             {
-                MessageBox.Show("Please enter CLO name.");
+                MessageBox.Show("Please enter Rubric ID.");
             }
             else
             {
@@ -32,27 +32,39 @@ namespace DBMIDPROJECT
                 {
                     var con = Configuration.getInstance().getConnection();
 
-                    SqlCommand cmdCLO = new SqlCommand("INSERT INTO Clo (Name, DateCreated, DateUpdated) VALUES (@Name, @DateCreated, @DateUpdated)", con);
-                    cmdCLO.Parameters.AddWithValue("@Name", cloName);
-                    cmdCLO.Parameters.AddWithValue("@DateCreated", DateTime.Now);
-                    cmdCLO.Parameters.AddWithValue("@DateUpdated", DateTime.Now);
+                    SqlCommand cmdCLO = new SqlCommand("INSERT INTO Rubric (Id, Details, CloId) VALUES (@Id, @Details, @CloId)", con);
+                    cmdCLO.Parameters.AddWithValue("@Id", RUBRICid);
+                    cmdCLO.Parameters.AddWithValue("@Details", textBox3.Text);
+                    cmdCLO.Parameters.AddWithValue("@CloId", textBox4.Text);
                     cmdCLO.ExecuteNonQuery();
 
-                    MessageBox.Show("CLO Successfully added");
-                    cleardata(); // Assuming this method clears CLO-related input fields
+                    MessageBox.Show("Rubrics Successfully added");
+                    cleardata();
+                  /*  showData2();*/// Assuming this method clears CLO-related input fields
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
-
-        
-         }
+            }
         private void cleardata()
         {
 
             textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

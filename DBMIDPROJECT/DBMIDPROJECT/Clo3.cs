@@ -16,6 +16,7 @@ namespace DBMIDPROJECT
         public Clo3()
         {
             InitializeComponent();
+            label4.Hide();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,6 +40,18 @@ namespace DBMIDPROJECT
         {
             var con = Configuration.getInstance().getConnection();
             SqlCommand cmd = new SqlCommand("Select * from Clo ", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sizeset();
+            dataGridView1.Refresh();
+        }
+
+        public void showData2()
+        {
+            var con = Configuration.getInstance().getConnection();
+            SqlCommand cmd = new SqlCommand("Select * from Clo Where Name NOT LIKE '!%' ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -91,7 +104,61 @@ namespace DBMIDPROJECT
 
         private void button4_Click(object sender, EventArgs e)
         {
+            label4.Hide();
+            showData2();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string cloName = textBox2.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(cloName))
+            {
+                MessageBox.Show("Please enter CLO name.");
+            }
+            else
+            {
+                try
+                {
+                    var con = Configuration.getInstance().getConnection();
+
+                    SqlCommand cmdCLO = new SqlCommand("INSERT INTO Clo (Name, DateCreated, DateUpdated) VALUES (@Name, @DateCreated, @DateUpdated)", con);
+                    cmdCLO.Parameters.AddWithValue("@Name", cloName);
+                    cmdCLO.Parameters.AddWithValue("@DateCreated", DateTime.Now);
+                    cmdCLO.Parameters.AddWithValue("@DateUpdated", DateTime.Now);
+                    cmdCLO.ExecuteNonQuery();
+
+                    MessageBox.Show("CLO Successfully added");
+                    cleardata();
+                    showData2();// Assuming this method clears CLO-related input fields
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+
+        }
+       
+    
+    private void cleardata()
+    {
+
+        textBox2.Text = "";
+    }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            label4.Show();
             showData();
+        }
+
+        private void Clo3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

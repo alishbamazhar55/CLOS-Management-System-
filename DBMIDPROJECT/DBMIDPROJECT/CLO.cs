@@ -15,9 +15,9 @@ namespace DBMIDPROJECT
         public CLO()
         {
             InitializeComponent();
-            clO11.Hide();
-            clo21.Hide();
-            clo31.Hide();
+           
+            clo22.Hide();
+            clo32.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -27,9 +27,7 @@ namespace DBMIDPROJECT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clO11.Show();
-        
-            clO11.BringToFront();
+           
         }
 
         private void CLO_Load(object sender, EventArgs e)
@@ -39,16 +37,33 @@ namespace DBMIDPROJECT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            clo21.Show();
-            clo21.BringToFront();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            clo31.Show();
-         
-            clo31.BringToFront();
-            clo31.showData();
+           
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            clo32.Show();
+
+            clo32.BringToFront();
+            clo32.showData2();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            clo22.Show();
+            clo22.BringToFront();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form f = new Form1();
+            f.Show();
+            this.Hide();
         }
     }
 }
