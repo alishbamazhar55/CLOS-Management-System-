@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DBMIDPROJECT
 {
-    public partial class CLO1 : UserControl
+    public partial class AddRL : UserControl
     {
-        public CLO1()
+        public AddRL()
         {
             InitializeComponent();
             l1();
@@ -21,7 +21,7 @@ namespace DBMIDPROJECT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string RUBRICid = textBox2.Text.Trim();
+            string RUBRICid = comboBox1.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(RUBRICid))
             {
@@ -33,15 +33,15 @@ namespace DBMIDPROJECT
                 {
                     var con = Configuration.getInstance().getConnection();
 
-                    SqlCommand cmdCLO = new SqlCommand("INSERT INTO Rubric (Id, Details, CloId) VALUES (@Id, @Details, @CloId)", con);
-                    cmdCLO.Parameters.AddWithValue("@Id", RUBRICid);
-                    cmdCLO.Parameters.AddWithValue("@Details", textBox3.Text);
-                    cmdCLO.Parameters.AddWithValue("@CloId", comboBox1.Text);
+                    SqlCommand cmdCLO = new SqlCommand("INSERT INTO RubricLevel (RubricId, Details, MeasurementLevel) VALUES (@RubricId, @Details, @MeasurementLevel)", con);
+                    cmdCLO.Parameters.AddWithValue("@RubricId", comboBox1.Text);
+                    cmdCLO.Parameters.AddWithValue("@Details", textBox2.Text);
+                    cmdCLO.Parameters.AddWithValue("@measurementLevel", textBox3.Text );
                     cmdCLO.ExecuteNonQuery();
 
                     MessageBox.Show("Rubrics Successfully added");
                     cleardata();
-                  /*  showData2();*/// Assuming this method clears CLO-related input fields
+                    /*  showData2();*/// Assuming this method clears CLO-related input fields
 
                 }
                 catch (Exception ex)
@@ -49,7 +49,9 @@ namespace DBMIDPROJECT
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
-            }
+        }
+
+
         void l1()
         {
             try
@@ -60,7 +62,7 @@ namespace DBMIDPROJECT
                 comboBox1.Items.Clear();
 
                 // Fetch CLO IDs from the CLO table
-                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Id FROM CLO   WHere Name NOT LIKE '!%'", con);
+                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Id FROM  Rubric   WHere  Details NOT LIKE '!%'", con);
                 SqlDataReader reader = cmdFetchCLOIds.ExecuteReader();
 
                 // Loop through the result set and add CLO IDs to the ComboBox
@@ -72,30 +74,16 @@ namespace DBMIDPROJECT
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error fetching CLO IDs: " + ex.Message);
+                MessageBox.Show("Error fetching Rubric IDs: " + ex.Message);
             }
 
         }
+
         private void cleardata()
         {
 
             textBox2.Text = "";
             textBox3.Text = "";
-          
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }

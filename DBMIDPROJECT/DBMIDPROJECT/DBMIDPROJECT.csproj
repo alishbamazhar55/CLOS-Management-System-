@@ -50,6 +50,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddRL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddRL.Designer.cs">
+      <DependentUpon>AddRL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Assessment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="Rubric.Designer.cs">
       <DependentUpon>Rubric.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rubriclevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rubriclevel.Designer.cs">
+      <DependentUpon>Rubriclevel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +164,9 @@
     <Compile Include="ViewRubric.Designer.cs">
       <DependentUpon>ViewRubric.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddRL.resx">
+      <DependentUpon>AddRL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Assessment.resx">
       <DependentUpon>Assessment.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +209,9 @@
     </Compile>
     <EmbeddedResource Include="Rubric.resx">
       <DependentUpon>Rubric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rubriclevel.resx">
+      <DependentUpon>Rubriclevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student.resx">
       <DependentUpon>Student.cs</DependentUpon>

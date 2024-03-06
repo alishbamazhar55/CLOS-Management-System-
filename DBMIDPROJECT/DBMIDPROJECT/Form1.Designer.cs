@@ -74,12 +74,13 @@ namespace DBMIDPROJECT
             this.button2.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.Location = new System.Drawing.Point(285, 314);
+            this.button2.Location = new System.Drawing.Point(271, 314);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 91);
+            this.button2.Size = new System.Drawing.Size(210, 91);
             this.button2.TabIndex = 2;
             this.button2.Text = "Manage Rubric Level";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
