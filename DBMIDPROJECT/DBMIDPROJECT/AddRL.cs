@@ -22,10 +22,16 @@ namespace DBMIDPROJECT
         private void button2_Click(object sender, EventArgs e)
         {
             string RUBRICid = comboBox1.Text.Trim();
+            string ML = textBox3.Text;
 
             if (string.IsNullOrWhiteSpace(RUBRICid))
             {
                 MessageBox.Show("Please enter Rubric ID.");
+            }
+            if (int.Parse(ML) > 4 || int.Parse(ML) < 1)
+            {
+                MessageBox.Show("Maximum Measurement Level is 4 and minimum level is 1.");
+                textBox3.Clear();
             }
             else
             {
@@ -84,6 +90,57 @@ namespace DBMIDPROJECT
 
             textBox2.Text = "";
             textBox3.Text = "";
+            comboBox1.Text = "";
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

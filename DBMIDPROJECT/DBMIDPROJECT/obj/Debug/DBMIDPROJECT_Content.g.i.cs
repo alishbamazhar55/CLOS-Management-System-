@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/assessment-concept-with-icons-and-signs-vector-29533961-removebg-previe" +
-    "w.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images-removebg-preview%20(1).png")]
 
 

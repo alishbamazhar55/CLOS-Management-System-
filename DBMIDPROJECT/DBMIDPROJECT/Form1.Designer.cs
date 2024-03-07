@@ -36,7 +36,9 @@ namespace DBMIDPROJECT
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,9 +63,9 @@ namespace DBMIDPROJECT
             this.button1.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.Location = new System.Drawing.Point(35, 178);
+            this.button1.Location = new System.Drawing.Point(25, 152);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 93);
+            this.button1.Size = new System.Drawing.Size(235, 70);
             this.button1.TabIndex = 1;
             this.button1.Text = "Manage Students";
             this.button1.UseVisualStyleBackColor = false;
@@ -74,9 +76,9 @@ namespace DBMIDPROJECT
             this.button2.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.Location = new System.Drawing.Point(271, 314);
+            this.button2.Location = new System.Drawing.Point(285, 254);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(210, 91);
+            this.button2.Size = new System.Drawing.Size(296, 64);
             this.button2.TabIndex = 2;
             this.button2.Text = "Manage Rubric Level";
             this.button2.UseVisualStyleBackColor = true;
@@ -87,9 +89,9 @@ namespace DBMIDPROJECT
             this.button3.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button3.Location = new System.Drawing.Point(35, 450);
+            this.button3.Location = new System.Drawing.Point(25, 254);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(183, 94);
+            this.button3.Size = new System.Drawing.Size(235, 70);
             this.button3.TabIndex = 3;
             this.button3.Text = "Manage Rubrics";
             this.button3.UseVisualStyleBackColor = true;
@@ -100,9 +102,9 @@ namespace DBMIDPROJECT
             this.button4.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button4.Location = new System.Drawing.Point(35, 314);
+            this.button4.Location = new System.Drawing.Point(285, 158);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(183, 91);
+            this.button4.Size = new System.Drawing.Size(296, 64);
             this.button4.TabIndex = 4;
             this.button4.Text = "Manage CLO\'S";
             this.button4.UseVisualStyleBackColor = true;
@@ -113,11 +115,11 @@ namespace DBMIDPROJECT
             this.button5.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button5.Location = new System.Drawing.Point(285, 177);
+            this.button5.Location = new System.Drawing.Point(138, 358);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(183, 94);
+            this.button5.Size = new System.Drawing.Size(296, 63);
             this.button5.TabIndex = 5;
-            this.button5.Text = "Manage Assessments";
+            this.button5.Text = "Manage Assessment ";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -126,12 +128,25 @@ namespace DBMIDPROJECT
             this.button6.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.SaddleBrown;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button6.Location = new System.Drawing.Point(285, 451);
+            this.button6.Location = new System.Drawing.Point(12, 564);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(183, 93);
+            this.button6.Size = new System.Drawing.Size(274, 65);
             this.button6.TabIndex = 6;
             this.button6.Text = "Manage Evaluation";
             this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button7.Location = new System.Drawing.Point(308, 564);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(253, 66);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "Mark Attendence";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // pictureBox1
             // 
@@ -143,12 +158,27 @@ namespace DBMIDPROJECT
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button8.Location = new System.Drawing.Point(138, 440);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(296, 98);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "Manage Assessments Components";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1153, 674);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -176,6 +206,8 @@ namespace DBMIDPROJECT
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 

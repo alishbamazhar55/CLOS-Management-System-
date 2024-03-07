@@ -49,6 +49,7 @@ namespace DBMIDPROJECT
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(237, 28);
             this.comboBox1.TabIndex = 27;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -60,6 +61,7 @@ namespace DBMIDPROJECT
             this.label4.Size = new System.Drawing.Size(626, 98);
             this.label4.TabIndex = 26;
             this.label4.Text = "ADD RUBRIC LEVEL";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel3
             // 
@@ -68,6 +70,7 @@ namespace DBMIDPROJECT
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(237, 1);
             this.panel3.TabIndex = 25;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel2
             // 
@@ -76,6 +79,7 @@ namespace DBMIDPROJECT
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(237, 1);
             this.panel2.TabIndex = 24;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // textBox3
             // 
@@ -85,6 +89,7 @@ namespace DBMIDPROJECT
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(237, 19);
             this.textBox3.TabIndex = 23;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // panel1
             // 
@@ -93,6 +98,7 @@ namespace DBMIDPROJECT
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(237, 1);
             this.panel1.TabIndex = 22;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
@@ -103,6 +109,7 @@ namespace DBMIDPROJECT
             this.label3.Size = new System.Drawing.Size(164, 71);
             this.label3.TabIndex = 21;
             this.label3.Text = "Details";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label1
             // 
@@ -113,6 +120,7 @@ namespace DBMIDPROJECT
             this.label1.Size = new System.Drawing.Size(196, 71);
             this.label1.TabIndex = 20;
             this.label1.Text = "RubricId";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
             // 
@@ -133,6 +141,7 @@ namespace DBMIDPROJECT
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(237, 19);
             this.textBox2.TabIndex = 18;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 
@@ -143,6 +152,7 @@ namespace DBMIDPROJECT
             this.label2.Size = new System.Drawing.Size(400, 71);
             this.label2.TabIndex = 17;
             this.label2.Text = "MeasurementLevel";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // AddRL
             // 

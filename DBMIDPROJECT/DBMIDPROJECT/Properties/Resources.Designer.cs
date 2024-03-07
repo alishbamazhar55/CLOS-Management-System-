@@ -63,6 +63,16 @@ namespace DBMIDPROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6612108_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("6612108-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap assessment_concept_with_icons_and_signs_vector_29533961_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("assessment-concept-with-icons-and-signs-vector-29533961-removebg-preview", resourceCulture);
@@ -76,6 +86,16 @@ namespace DBMIDPROJECT.Properties {
         internal static System.Drawing.Bitmap images_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("images-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images_removebg_preview__1_ {
+            get {
+                object obj = ResourceManager.GetObject("images-removebg-preview (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -117,6 +137,16 @@ namespace DBMIDPROJECT.Properties {
             get {
                 object obj = ResourceManager.GetObject("png-clipart-leadership-management-student-leader-business-student-blue-text-remov" +
                         "ebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rm_icon_lg_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("rm-icon-lg-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -111,6 +111,7 @@ namespace DBMIDPROJECT
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button1.Location = new System.Drawing.Point(34, 240);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(186, 61);
@@ -121,6 +122,7 @@ namespace DBMIDPROJECT
             // 
             // button5
             // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.button5.Location = new System.Drawing.Point(34, 362);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(186, 58);
@@ -131,6 +133,7 @@ namespace DBMIDPROJECT
             // 
             // button6
             // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button6.Location = new System.Drawing.Point(12, 630);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(130, 58);
@@ -152,6 +155,9 @@ namespace DBMIDPROJECT
             // 
             // clo32
             // 
+            this.clo32.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.clo32.BackColor = System.Drawing.Color.RosyBrown;
             this.clo32.Location = new System.Drawing.Point(254, -5);
             this.clo32.Name = "clo32";

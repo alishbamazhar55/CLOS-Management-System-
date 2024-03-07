@@ -55,7 +55,8 @@ namespace DBMIDPROJECT
 
             var con = Configuration.getInstance().getConnection();
 
-            SqlCommand updateCmd = new SqlCommand("UPDATE Rubric SET Details = '!' + Details WHERE Id = @Id", con);
+            SqlCommand updateCmd = new SqlCommand("UPDATE Rubric SET Details = '!' + Details WHERE Id = @Id;"+
+                "update RubricLevel SET Details = '!' + Details Where RubricId=@Id", con);
             updateCmd.Parameters.AddWithValue("@Id", textBox1.Text);
             updateCmd.ExecuteNonQuery();
 

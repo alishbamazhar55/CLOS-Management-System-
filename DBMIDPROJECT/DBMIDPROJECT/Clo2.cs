@@ -49,7 +49,7 @@ namespace DBMIDPROJECT
         public void showData()
         {
             var con = Configuration.getInstance().getConnection();
-            SqlCommand cmd = new SqlCommand("Select * from Clo  ", con);
+            SqlCommand cmd = new SqlCommand("Select * from Clo WHERE Name NOT LIKE '!%' ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -150,12 +150,13 @@ namespace DBMIDPROJECT
             var con = Configuration.getInstance().getConnection();
 
             SqlCommand updateCmd = new SqlCommand("UPDATE Clo SET Name = '!' + Name WHERE Id = @Id;" +
-                "Update Rubric SET Details =  '!' + Details  WHERE CloId=@Id"  , con);
+                "Update Rubric SET Details =  '!' + Details  WHERE CloId=@Id; " +
+                "Update RubricLevel Set Details = '!' + Details Where RubricId = (select Id from Rubric Where CloId=@Id) ", con);
             updateCmd.Parameters.AddWithValue("@Id", id);
             updateCmd.ExecuteNonQuery();
 
 
-            //MessageBox.Show("Successfully deleted ");
+            MessageBox.Show("Successfully deleted ");
 
             cleardata();
             showData();

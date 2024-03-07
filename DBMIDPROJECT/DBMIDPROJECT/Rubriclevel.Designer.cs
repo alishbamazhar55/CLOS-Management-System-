@@ -36,6 +36,10 @@ namespace DBMIDPROJECT
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.addRL1 = new DBMIDPROJECT.AddRL();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.vIewRL1 = new DBMIDPROJECT.VIewRL();
+            this.deleteRL1 = new DBMIDPROJECT.DeleteRL();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -46,6 +50,7 @@ namespace DBMIDPROJECT
             this.button4.TabIndex = 11;
             this.button4.Text = "Back";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -55,6 +60,7 @@ namespace DBMIDPROJECT
             this.button3.TabIndex = 10;
             this.button3.Text = "Update/Delete Rubrics Level\r\n";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -64,10 +70,11 @@ namespace DBMIDPROJECT
             this.button2.TabIndex = 9;
             this.button2.Text = "VIew/Search Rubrics Level\r\n";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(29, 217);
+            this.button1.Location = new System.Drawing.Point(29, 221);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(167, 58);
             this.button1.TabIndex = 8;
@@ -92,7 +99,7 @@ namespace DBMIDPROJECT
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Print", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(382, 111);
+            this.label2.Location = new System.Drawing.Point(350, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(689, 79);
             this.label2.TabIndex = 12;
@@ -101,11 +108,38 @@ namespace DBMIDPROJECT
             // addRL1
             // 
             this.addRL1.BackColor = System.Drawing.Color.RosyBrown;
-            this.addRL1.Location = new System.Drawing.Point(253, 2);
+            this.addRL1.Location = new System.Drawing.Point(253, -1);
             this.addRL1.Name = "addRL1";
             this.addRL1.Size = new System.Drawing.Size(964, 724);
             this.addRL1.TabIndex = 13;
             this.addRL1.Load += new System.EventHandler(this.addRL1_Load);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DBMIDPROJECT.Properties.Resources.rm_icon_lg_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(385, 171);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(671, 443);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // vIewRL1
+            // 
+            this.vIewRL1.BackColor = System.Drawing.Color.RosyBrown;
+            this.vIewRL1.Location = new System.Drawing.Point(253, -1);
+            this.vIewRL1.Name = "vIewRL1";
+            this.vIewRL1.Size = new System.Drawing.Size(964, 739);
+            this.vIewRL1.TabIndex = 15;
+            // 
+            // deleteRL1
+            // 
+            this.deleteRL1.BackColor = System.Drawing.Color.RosyBrown;
+            this.deleteRL1.Location = new System.Drawing.Point(253, -1);
+            this.deleteRL1.Name = "deleteRL1";
+            this.deleteRL1.Size = new System.Drawing.Size(962, 722);
+            this.deleteRL1.TabIndex = 16;
+            this.deleteRL1.Load += new System.EventHandler(this.deleteRL1_Load);
             // 
             // Rubriclevel
             // 
@@ -113,6 +147,9 @@ namespace DBMIDPROJECT
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1214, 724);
+            this.Controls.Add(this.deleteRL1);
+            this.Controls.Add(this.vIewRL1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.addRL1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button4);
@@ -120,9 +157,9 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Enabled = false;
             this.Name = "Rubriclevel";
             this.Text = "Rubriclevel";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +174,8 @@ namespace DBMIDPROJECT
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private AddRL addRL1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private VIewRL vIewRL1;
+        private DeleteRL deleteRL1;
     }
 }
