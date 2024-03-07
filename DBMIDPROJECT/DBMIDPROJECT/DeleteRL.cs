@@ -85,6 +85,13 @@ namespace DBMIDPROJECT
 
         private void button3_Click(object sender, EventArgs e)
         {
+            string searchTerm = textBox4.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Please enter a search term.");
+                return; // Exit the method if the search term is empty
+            }
             var con = Configuration.getInstance().getConnection();
             string query = "SELECT * FROM RubricLevel WHERE Id LIKE @SearchText OR RubricId LIKE @SearchText OR Details LIKE @SearchText OR Measurementlevel LIKE @SearchText  ";
 
@@ -109,7 +116,7 @@ namespace DBMIDPROJECT
                 var con = Configuration.getInstance().getConnection();
 
                 // Fetch Id from the database
-                SqlCommand fetchIdCmd = new SqlCommand("SELECT Id FROM Assessment WHERE Id = @Id", con);
+                SqlCommand fetchIdCmd = new SqlCommand("SELECT Id FROM RubricLevel WHERE Id = @Id", con);
                 fetchIdCmd.Parameters.AddWithValue("@Id", id);
 
 

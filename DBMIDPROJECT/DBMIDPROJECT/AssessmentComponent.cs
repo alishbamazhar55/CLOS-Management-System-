@@ -17,6 +17,7 @@ namespace DBMIDPROJECT
             InitializeComponent();
             addAC1.Hide();
             viewAC1.Hide();
+            deleteAC1.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,6 +31,18 @@ namespace DBMIDPROJECT
             viewAC1.Show();
             viewAC1.BringToFront();
             viewAC1.showData();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            deleteAC1.Show();
+            deleteAC1.BringToFront();
+            deleteAC1.showData();
+        }
+
+        private void deleteAC1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

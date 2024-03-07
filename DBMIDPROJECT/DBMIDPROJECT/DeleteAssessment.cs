@@ -40,6 +40,13 @@ namespace DBMIDPROJECT
 
         private void button3_Click(object sender, EventArgs e)
         {
+            string searchTerm = textBox4.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Please enter a search term.");
+                return; 
+            }
             var con = Configuration.getInstance().getConnection();
             string query = "SELECT * FROM Assessment WHERE Id LIKE @SearchText OR Title LIKE @SearchText OR TotalMarks LIKE @SearchText , OR TotalWeightage LIKE @SearchText  ";
 

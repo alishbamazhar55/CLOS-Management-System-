@@ -35,10 +35,10 @@ namespace DBMIDPROJECT
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.addRL1 = new DBMIDPROJECT.AddRL();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.vIewRL1 = new DBMIDPROJECT.VIewRL();
             this.deleteRL1 = new DBMIDPROJECT.DeleteRL();
+            this.vIewRL1 = new DBMIDPROJECT.VIewRL();
+            this.addRL1 = new DBMIDPROJECT.AddRL();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,15 +105,6 @@ namespace DBMIDPROJECT
             this.label2.TabIndex = 12;
             this.label2.Text = "Management of Rubric Levels\r\n";
             // 
-            // addRL1
-            // 
-            this.addRL1.BackColor = System.Drawing.Color.RosyBrown;
-            this.addRL1.Location = new System.Drawing.Point(253, -1);
-            this.addRL1.Name = "addRL1";
-            this.addRL1.Size = new System.Drawing.Size(964, 724);
-            this.addRL1.TabIndex = 13;
-            this.addRL1.Load += new System.EventHandler(this.addRL1_Load);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DBMIDPROJECT.Properties.Resources.rm_icon_lg_removebg_preview;
@@ -124,14 +115,6 @@ namespace DBMIDPROJECT
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // vIewRL1
-            // 
-            this.vIewRL1.BackColor = System.Drawing.Color.RosyBrown;
-            this.vIewRL1.Location = new System.Drawing.Point(253, -1);
-            this.vIewRL1.Name = "vIewRL1";
-            this.vIewRL1.Size = new System.Drawing.Size(964, 739);
-            this.vIewRL1.TabIndex = 15;
-            // 
             // deleteRL1
             // 
             this.deleteRL1.BackColor = System.Drawing.Color.RosyBrown;
@@ -141,14 +124,29 @@ namespace DBMIDPROJECT
             this.deleteRL1.TabIndex = 16;
             this.deleteRL1.Load += new System.EventHandler(this.deleteRL1_Load);
             // 
+            // vIewRL1
+            // 
+            this.vIewRL1.BackColor = System.Drawing.Color.RosyBrown;
+            this.vIewRL1.Location = new System.Drawing.Point(253, -1);
+            this.vIewRL1.Name = "vIewRL1";
+            this.vIewRL1.Size = new System.Drawing.Size(964, 739);
+            this.vIewRL1.TabIndex = 15;
+            // 
+            // addRL1
+            // 
+            this.addRL1.BackColor = System.Drawing.Color.RosyBrown;
+            this.addRL1.Location = new System.Drawing.Point(253, -1);
+            this.addRL1.Name = "addRL1";
+            this.addRL1.Size = new System.Drawing.Size(964, 724);
+            this.addRL1.TabIndex = 13;
+            this.addRL1.Load += new System.EventHandler(this.addRL1_Load);
+            // 
             // Rubriclevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1214, 724);
-            this.Controls.Add(this.deleteRL1);
-            this.Controls.Add(this.vIewRL1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.addRL1);
             this.Controls.Add(this.label2);
@@ -157,6 +155,8 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.deleteRL1);
+            this.Controls.Add(this.vIewRL1);
             this.Name = "Rubriclevel";
             this.Text = "Rubriclevel";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

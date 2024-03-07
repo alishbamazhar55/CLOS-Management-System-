@@ -36,8 +36,9 @@ namespace DBMIDPROJECT
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.addAC1 = new DBMIDPROJECT.AddAC();
+            this.deleteAC1 = new DBMIDPROJECT.DeleteAC();
             this.viewAC1 = new DBMIDPROJECT.ViewAC();
+            this.addAC1 = new DBMIDPROJECT.AddAC();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@ namespace DBMIDPROJECT
             this.button2.TabIndex = 13;
             this.button2.Text = "Delete/Update Assessment Component\r\n";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -111,13 +113,14 @@ namespace DBMIDPROJECT
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // addAC1
+            // deleteAC1
             // 
-            this.addAC1.BackColor = System.Drawing.Color.RosyBrown;
-            this.addAC1.Location = new System.Drawing.Point(252, 1);
-            this.addAC1.Name = "addAC1";
-            this.addAC1.Size = new System.Drawing.Size(962, 722);
-            this.addAC1.TabIndex = 18;
+            this.deleteAC1.BackColor = System.Drawing.Color.RosyBrown;
+            this.deleteAC1.Location = new System.Drawing.Point(252, 1);
+            this.deleteAC1.Name = "deleteAC1";
+            this.deleteAC1.Size = new System.Drawing.Size(964, 739);
+            this.deleteAC1.TabIndex = 20;
+            this.deleteAC1.Load += new System.EventHandler(this.deleteAC1_Load);
             // 
             // viewAC1
             // 
@@ -127,12 +130,21 @@ namespace DBMIDPROJECT
             this.viewAC1.Size = new System.Drawing.Size(962, 722);
             this.viewAC1.TabIndex = 19;
             // 
+            // addAC1
+            // 
+            this.addAC1.BackColor = System.Drawing.Color.RosyBrown;
+            this.addAC1.Location = new System.Drawing.Point(252, 1);
+            this.addAC1.Name = "addAC1";
+            this.addAC1.Size = new System.Drawing.Size(962, 722);
+            this.addAC1.TabIndex = 18;
+            // 
             // AssessmentComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1214, 724);
+            this.Controls.Add(this.deleteAC1);
             this.Controls.Add(this.viewAC1);
             this.Controls.Add(this.addAC1);
             this.Controls.Add(this.pictureBox1);
@@ -161,5 +173,6 @@ namespace DBMIDPROJECT
         private System.Windows.Forms.PictureBox pictureBox1;
         private AddAC addAC1;
         private ViewAC viewAC1;
+        private DeleteAC deleteAC1;
     }
 }

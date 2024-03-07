@@ -129,6 +129,12 @@
       <DependentUpon>Clo3.cs</DependentUpon>
     </Compile>
     <Compile Include="Configuration.cs" />
+    <Compile Include="DeleteAC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteAC.Designer.cs">
+      <DependentUpon>DeleteAC.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteAssessment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clo3.resx">
       <DependentUpon>Clo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAC.resx">
+      <DependentUpon>DeleteAC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteAssessment.resx">
       <DependentUpon>DeleteAssessment.cs</DependentUpon>

@@ -70,17 +70,25 @@ namespace DBMIDPROJECT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var con = Configuration.getInstance().getConnection();
-            string query = "SELECT * FROM Assessment WHERE Id LIKE @SearchText OR Title LIKE @SearchText OR DateCreated LIKE @SearchText OR TotalMarks LIKE @SearchText OR TotalWeightage LIKE @SearchText ";
-
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                cmd.Parameters.AddWithValue("@SearchText", textBox1.Text);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                MessageBox.Show("Please enter text for search.");
+            }
 
+            else
+            {
+                var con = Configuration.getInstance().getConnection();
+                string query = "SELECT * FROM Assessment WHERE Id LIKE @SearchText OR Title LIKE @SearchText OR DateCreated LIKE @SearchText OR TotalMarks LIKE @SearchText OR TotalWeightage LIKE @SearchText ";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@SearchText", textBox1.Text);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+
+                }
             }
 
             sizeset();

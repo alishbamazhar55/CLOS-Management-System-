@@ -55,6 +55,13 @@ namespace DBMIDPROJECT
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string searchTerm = textBox1.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Please enter a search term.");
+                return; // Exit the method if the search term is empty
+            }
             var con = Configuration.getInstance().getConnection();
             string query = "SELECT * FROM RubricLevel WHERE Id LIKE @SearchText OR Details LIKE @SearchText OR RubricId LIKE @SearchText   OR MeasurementLevel LIKE @SearchText ";
 

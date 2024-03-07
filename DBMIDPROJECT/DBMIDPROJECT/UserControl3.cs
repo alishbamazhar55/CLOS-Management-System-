@@ -166,6 +166,13 @@ namespace DBMIDPROJECT
 
         private void button3_Click(object sender, EventArgs e)
         {
+            string searchTerm = textBox7.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                MessageBox.Show("Please enter a search term.");
+                return; // Exit the method if the search term is empty
+            }
             var con = Configuration.getInstance().getConnection();
             string query = "SELECT * FROM Student WHERE Id LIKE @SearchText OR FirstName LIKE @SearchText OR LastName LIKE @SearchText OR Contact LIKE @SearchText OR Email LIKE @SearchText OR RegistrationNumber LIKE @SearchText or Status LIKE @SearchText ";
 
