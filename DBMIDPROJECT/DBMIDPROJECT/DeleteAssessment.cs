@@ -89,7 +89,8 @@ namespace DBMIDPROJECT
 
             var con = Configuration.getInstance().getConnection();
 
-            SqlCommand updateCmd = new SqlCommand("UPDATE Assessment SET Title = '!' + Title WHERE Id = @Id", con);
+            SqlCommand updateCmd = new SqlCommand("UPDATE Assessment SET Title = '!' + Title WHERE Id = @Id;"+
+                "UPDATE AssessmentComponent SET Name = '!' + Name Where AssessmentId = @Id", con) ;
             updateCmd.Parameters.AddWithValue("@Id", id);
             updateCmd.ExecuteNonQuery();
 

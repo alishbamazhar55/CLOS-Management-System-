@@ -22,6 +22,7 @@ namespace DBMIDPROJECT
         private void button2_Click(object sender, EventArgs e)
         {
             string RUBRICid = textBox2.Text.Trim();
+            string clos = comboBox1.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(RUBRICid))
             {
@@ -32,11 +33,13 @@ namespace DBMIDPROJECT
                 try
                 {
                     var con = Configuration.getInstance().getConnection();
-
+                    SqlCommand cmdFetchRubricId = new SqlCommand("SELECT Id FROM Clo WHERE Details = @Details", con);
+                    cmdFetchRubricId.Parameters.AddWithValue("@Details", clos);
+                    int cloid = (int)cmdFetchRubricId.ExecuteScalar();
                     SqlCommand cmdCLO = new SqlCommand("INSERT INTO Rubric (Id, Details, CloId) VALUES (@Id, @Details, @CloId)", con);
                     cmdCLO.Parameters.AddWithValue("@Id", RUBRICid);
                     cmdCLO.Parameters.AddWithValue("@Details", textBox3.Text);
-                    cmdCLO.Parameters.AddWithValue("@CloId", comboBox1.Text);
+                    cmdCLO.Parameters.AddWithValue("@CloId", cloid);
                     cmdCLO.ExecuteNonQuery();
 
                     MessageBox.Show("Rubrics Successfully added");
@@ -60,13 +63,13 @@ namespace DBMIDPROJECT
                 comboBox1.Items.Clear();
 
                 // Fetch CLO IDs from the CLO table
-                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Id FROM CLO   WHere Name NOT LIKE '!%'", con);
+                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Name FROM CLO   WHere Name NOT LIKE '!%'", con);
                 SqlDataReader reader = cmdFetchCLOIds.ExecuteReader();
 
                 // Loop through the result set and add CLO IDs to the ComboBox
                 while (reader.Read())
                 {
-                    comboBox1.Items.Add(reader["Id"].ToString());
+                    comboBox1.Items.Add(reader["Name"].ToString());
                 }
                 reader.Close();
             }

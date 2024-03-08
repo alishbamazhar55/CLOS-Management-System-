@@ -21,10 +21,10 @@ namespace DBMIDPROJECT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string RUBRICid = comboBox1.Text.Trim();
+            string RUBRICdetails = comboBox1.Text.Trim();
             string ML = textBox3.Text;
 
-            if (string.IsNullOrWhiteSpace(RUBRICid))
+            if (string.IsNullOrWhiteSpace(RUBRICdetails))
             {
                 MessageBox.Show("Please enter Rubric ID.");
             }
@@ -38,9 +38,12 @@ namespace DBMIDPROJECT
                 try
                 {
                     var con = Configuration.getInstance().getConnection();
+                    SqlCommand cmdFetchRubricId = new SqlCommand("SELECT Id FROM Rubric WHERE Details = @Details", con);
+                    cmdFetchRubricId.Parameters.AddWithValue("@Details", RUBRICdetails);
+                    int RUBRICid = (int)cmdFetchRubricId.ExecuteScalar();
 
                     SqlCommand cmdCLO = new SqlCommand("INSERT INTO RubricLevel (RubricId, Details, MeasurementLevel) VALUES (@RubricId, @Details, @MeasurementLevel)", con);
-                    cmdCLO.Parameters.AddWithValue("@RubricId", comboBox1.Text);
+                    cmdCLO.Parameters.AddWithValue("@RubricId", RUBRICid);
                     cmdCLO.Parameters.AddWithValue("@Details", textBox2.Text);
                     cmdCLO.Parameters.AddWithValue("@measurementLevel", textBox3.Text );
                     cmdCLO.ExecuteNonQuery();
@@ -64,17 +67,17 @@ namespace DBMIDPROJECT
             {
                 var con = Configuration.getInstance().getConnection();
 
-                // Clear existing items in the ComboBox
+  
                 comboBox1.Items.Clear();
 
                 // Fetch CLO IDs from the CLO table
-                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Id FROM  Rubric   WHere  Details NOT LIKE '!%'", con);
+                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Details FROM  Rubric   WHere  Details NOT LIKE '!%'", con);
                 SqlDataReader reader = cmdFetchCLOIds.ExecuteReader();
 
-                // Loop through the result set and add CLO IDs to the ComboBox
+             
                 while (reader.Read())
                 {
-                    comboBox1.Items.Add(reader["Id"].ToString());
+                    comboBox1.Items.Add(reader["Details"].ToString());
                 }
                 reader.Close();
             }
@@ -140,6 +143,11 @@ namespace DBMIDPROJECT
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddRL_Load(object sender, EventArgs e)
         {
 
         }

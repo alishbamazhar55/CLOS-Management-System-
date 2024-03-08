@@ -12,6 +12,7 @@ namespace DBMIDPROJECT
 {
     public partial class Form1 : Form
     {
+        public Form evaluationForm = null;
         public Form1()
         {
             InitializeComponent();
@@ -80,6 +81,21 @@ namespace DBMIDPROJECT
         {
             Form f = new AssessmentComponent();
             f.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            evaluationForm = new evalution();
+            evaluationForm.Show();
+            this.Hide();
+            
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form f = new AssessmentResult();
+                f.Show();
             this.Hide();
         }
     }

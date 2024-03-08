@@ -42,6 +42,8 @@ namespace DBMIDPROJECT
             dataGridView1.DataSource = dt;
             sizeset();
             dataGridView1.Refresh();
+           dataGridView1.DefaultCellStyle.BackColor = Color.AliceBlue;
+       
         }
 
 

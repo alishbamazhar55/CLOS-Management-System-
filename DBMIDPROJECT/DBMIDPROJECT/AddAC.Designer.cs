@@ -51,6 +51,7 @@ namespace DBMIDPROJECT
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(237, 28);
             this.comboBox1.TabIndex = 38;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -135,6 +136,7 @@ namespace DBMIDPROJECT
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(237, 19);
             this.textBox3.TabIndex = 34;
+            this.textBox3.BorderStyleChanged += new System.EventHandler(this.textBox3_BorderStyleChanged);
             // 
             // label2
             // 
@@ -163,6 +165,7 @@ namespace DBMIDPROJECT
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(237, 28);
             this.comboBox2.TabIndex = 42;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // AddAC
             // 

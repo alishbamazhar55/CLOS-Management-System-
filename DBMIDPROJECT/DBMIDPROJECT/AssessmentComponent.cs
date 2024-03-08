@@ -44,5 +44,12 @@ namespace DBMIDPROJECT
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form f = new Form1();
+            f.Show();
+            this.Hide();
+        }
     }
 }

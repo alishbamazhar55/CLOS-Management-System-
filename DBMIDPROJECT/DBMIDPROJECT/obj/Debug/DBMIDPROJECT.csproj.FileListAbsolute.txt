@@ -55,5 +55,8 @@ C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DB
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.AddAC.resources
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.AssessmentComponent.resources
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.ViewAC.resources
-C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.csproj.AssemblyReference.cache
 C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.DeleteAC.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.evalution.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.EvalutionMarks.resources
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.csproj.AssemblyReference.cache
+C:\alishbaData\4th semester\DB\MIDPROJECT\DBMIDPROJECT\DBMIDPROJECT\obj\Debug\DBMIDPROJECT.AssessmentResult.resources

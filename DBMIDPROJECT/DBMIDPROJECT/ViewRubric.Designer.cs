@@ -53,6 +53,7 @@ namespace DBMIDPROJECT
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(28, 79);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(124, 41);
@@ -63,6 +64,7 @@ namespace DBMIDPROJECT
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(676, 126);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 41);
@@ -92,6 +94,7 @@ namespace DBMIDPROJECT
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(806, 79);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 41);
@@ -104,6 +107,7 @@ namespace DBMIDPROJECT
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(158, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(618, 71);

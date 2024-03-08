@@ -138,7 +138,7 @@ namespace DBMIDPROJECT
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe Print", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Maroon;
+            this.label4.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.label4.Location = new System.Drawing.Point(247, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(468, 64);

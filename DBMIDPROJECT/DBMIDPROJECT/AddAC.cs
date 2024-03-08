@@ -29,13 +29,13 @@ namespace DBMIDPROJECT
                 comboBox1.Items.Clear();
 
                 // Fetch CLO IDs from the CLO table
-                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Id FROM  Rubric   WHere  Details NOT LIKE '!%'", con);
+                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Details FROM  Rubric   WHere  Details NOT LIKE '!%'", con);
                 SqlDataReader reader = cmdFetchCLOIds.ExecuteReader();
 
                 // Loop through the result set and add CLO IDs to the ComboBox
                 while (reader.Read())
                 {
-                    comboBox1.Items.Add(reader["Id"].ToString());
+                    comboBox1.Items.Add(reader["Details"].ToString());
                 }
                 reader.Close();
             }
@@ -55,12 +55,12 @@ namespace DBMIDPROJECT
                 comboBox2.Items.Clear();
 
   
-                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Id FROM  Assessment   WHere Title NOT LIKE '!%'", con);
+                SqlCommand cmdFetchCLOIds = new SqlCommand("SELECT Title FROM  Assessment   WHere Title NOT LIKE '!%'", con);
                 SqlDataReader reader = cmdFetchCLOIds.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    comboBox2.Items.Add(reader["Id"].ToString());
+                    comboBox2.Items.Add(reader["Title"].ToString());
                 }
                 reader.Close();
             }
@@ -82,15 +82,15 @@ namespace DBMIDPROJECT
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            string RUBRICid = comboBox1.Text.Trim();
-            string assessmentid = comboBox2.Text.Trim();
+            string RUBRICdetails= comboBox1.Text.Trim();
+            string assessmentTitle = comboBox2.Text.Trim();
             string ML = textBox3.Text;
 
-            if (string.IsNullOrWhiteSpace(RUBRICid))
+            if (string.IsNullOrWhiteSpace(RUBRICdetails))
             {
                 MessageBox.Show("Please enter Rubric ID.");
             }
-            if (string.IsNullOrWhiteSpace(assessmentid))
+            if (string.IsNullOrWhiteSpace(assessmentTitle))
             {
                 MessageBox.Show("Please enter assessment  ID.");
             }
@@ -100,10 +100,17 @@ namespace DBMIDPROJECT
                 try
                 {
                     var con = Configuration.getInstance().getConnection();
+                    SqlCommand cmdFetchAssessmentId = new SqlCommand("SELECT Id FROM Assessment WHERE Title = @Title", con);
+                    cmdFetchAssessmentId.Parameters.AddWithValue("@Title", assessmentTitle);
+                    int assessmentId = (int)cmdFetchAssessmentId.ExecuteScalar();
+                    SqlCommand cmdFetchRubricId = new SqlCommand("SELECT Id FROM Rubric WHERE Details = @Details", con);
+                    cmdFetchRubricId.Parameters.AddWithValue("@Details", RUBRICdetails);
+                    int RUBRICid = (int)cmdFetchRubricId.ExecuteScalar();
+
 
                     SqlCommand cmdCLO = new SqlCommand("INSERT INTO AssessmentComponent (Name ,RubricId, TotalMarks, DateCreated ,DateUpdated, AssessmentId) VALUES (@Name ,@RubricId, @TotalMarks, @DateCreated ,@DateUpdated, @AssessmentId)", con);
-                    cmdCLO.Parameters.AddWithValue("@RubricId", comboBox1.Text);
-                    cmdCLO.Parameters.AddWithValue("@AssessmentId", comboBox2.Text);
+                    cmdCLO.Parameters.AddWithValue("@RubricId", RUBRICid);
+                    cmdCLO.Parameters.AddWithValue("@AssessmentId", assessmentId);
                     cmdCLO.Parameters.AddWithValue("@Name", textBox2.Text);
                     cmdCLO.Parameters.AddWithValue("@TotalMarks", textBox3.Text);
                     cmdCLO.Parameters.AddWithValue("@DateCreated", DateTime.Now);
@@ -120,6 +127,21 @@ namespace DBMIDPROJECT
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void textBox3_BorderStyleChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,16 +53,18 @@ namespace DBMIDPROJECT
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(43, 105);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 41);
+            this.button3.Size = new System.Drawing.Size(180, 41);
             this.button3.TabIndex = 43;
-            this.button3.Text = "All Rubrics";
+            this.button3.Text = "All Assessments";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(596, 145);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 41);
@@ -77,9 +79,9 @@ namespace DBMIDPROJECT
             this.label2.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(198, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 33);
+            this.label2.Size = new System.Drawing.Size(149, 33);
             this.label2.TabIndex = 41;
-            this.label2.Text = "enter Text ";
+            this.label2.Text = "Enter Text ";
             // 
             // textBox1
             // 
@@ -90,6 +92,7 @@ namespace DBMIDPROJECT
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(794, 105);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 41);
@@ -102,6 +105,7 @@ namespace DBMIDPROJECT
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(124, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(741, 71);

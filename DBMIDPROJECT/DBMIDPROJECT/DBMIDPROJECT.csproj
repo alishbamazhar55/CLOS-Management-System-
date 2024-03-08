@@ -80,6 +80,12 @@
     <Compile Include="AssessmentComponent.Designer.cs">
       <DependentUpon>AssessmentComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssessmentResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssessmentResult.Designer.cs">
+      <DependentUpon>AssessmentResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="AssessmentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,18 @@
     </Compile>
     <Compile Include="DeleteRubric.Designer.cs">
       <DependentUpon>DeleteRubric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evalution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evalution.Designer.cs">
+      <DependentUpon>evalution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvalutionMarks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EvalutionMarks.Designer.cs">
+      <DependentUpon>EvalutionMarks.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -236,6 +254,9 @@
     <EmbeddedResource Include="AssessmentComponent.resx">
       <DependentUpon>AssessmentComponent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentResult.resx">
+      <DependentUpon>AssessmentResult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AssessmentsForm.resx">
       <DependentUpon>AssessmentsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +292,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteRubric.resx">
       <DependentUpon>DeleteRubric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="evalution.resx">
+      <DependentUpon>evalution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvalutionMarks.resx">
+      <DependentUpon>EvalutionMarks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

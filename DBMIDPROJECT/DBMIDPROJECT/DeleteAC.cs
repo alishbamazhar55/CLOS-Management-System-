@@ -54,13 +54,13 @@ namespace DBMIDPROJECT
         {
             if (string.IsNullOrWhiteSpace(id))
             {
-                MessageBox.Show("Please select a Rubric level id to delete.");
+                MessageBox.Show("Please select a AssessmentComponent id to delete.");
                 return;
             }
 
             var con = Configuration.getInstance().getConnection();
 
-            SqlCommand updateCmd = new SqlCommand("UPDATE RubricLevel SET Details = '!' + Details WHERE Id = @Id", con);
+            SqlCommand updateCmd = new SqlCommand("UPDATE  AssessmentComponent SET Name = '!' + Name WHERE Id = @Id", con);
             updateCmd.Parameters.AddWithValue("@Id", id);
             updateCmd.ExecuteNonQuery();
 
