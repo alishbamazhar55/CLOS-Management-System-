@@ -286,5 +286,10 @@ namespace DBMIDPROJECT
         {
 
         }
+
+        private void evalution_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

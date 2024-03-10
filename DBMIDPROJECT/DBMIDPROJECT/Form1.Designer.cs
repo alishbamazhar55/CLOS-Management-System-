@@ -40,6 +40,7 @@ namespace DBMIDPROJECT
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@ namespace DBMIDPROJECT
             this.button1.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Maroon;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button1.Location = new System.Drawing.Point(12, 129);
+            this.button1.Location = new System.Drawing.Point(15, 110);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(298, 47);
             this.button1.TabIndex = 1;
@@ -79,7 +80,7 @@ namespace DBMIDPROJECT
             this.button2.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Maroon;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.Location = new System.Drawing.Point(9, 286);
+            this.button2.Location = new System.Drawing.Point(9, 267);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(301, 50);
             this.button2.TabIndex = 2;
@@ -93,7 +94,7 @@ namespace DBMIDPROJECT
             this.button3.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Maroon;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button3.Location = new System.Drawing.Point(12, 232);
+            this.button3.Location = new System.Drawing.Point(12, 213);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(298, 48);
             this.button3.TabIndex = 3;
@@ -107,7 +108,7 @@ namespace DBMIDPROJECT
             this.button4.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Maroon;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button4.Location = new System.Drawing.Point(15, 182);
+            this.button4.Location = new System.Drawing.Point(15, 163);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(295, 44);
             this.button4.TabIndex = 4;
@@ -121,7 +122,7 @@ namespace DBMIDPROJECT
             this.button5.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Maroon;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button5.Location = new System.Drawing.Point(12, 342);
+            this.button5.Location = new System.Drawing.Point(12, 323);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(298, 49);
             this.button5.TabIndex = 5;
@@ -135,7 +136,7 @@ namespace DBMIDPROJECT
             this.button6.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Maroon;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button6.Location = new System.Drawing.Point(15, 532);
+            this.button6.Location = new System.Drawing.Point(12, 513);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(295, 46);
             this.button6.TabIndex = 6;
@@ -149,7 +150,7 @@ namespace DBMIDPROJECT
             this.button7.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Maroon;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button7.Location = new System.Drawing.Point(15, 485);
+            this.button7.Location = new System.Drawing.Point(15, 466);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(295, 41);
             this.button7.TabIndex = 8;
@@ -163,7 +164,7 @@ namespace DBMIDPROJECT
             this.button8.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.Maroon;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button8.Location = new System.Drawing.Point(12, 397);
+            this.button8.Location = new System.Drawing.Point(12, 378);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(298, 82);
             this.button8.TabIndex = 9;
@@ -187,7 +188,7 @@ namespace DBMIDPROJECT
             this.button9.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.Maroon;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button9.Location = new System.Drawing.Point(12, 587);
+            this.button9.Location = new System.Drawing.Point(9, 565);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(298, 43);
             this.button9.TabIndex = 10;
@@ -195,12 +196,27 @@ namespace DBMIDPROJECT
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button10.Font = new System.Drawing.Font("Noto Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.Maroon;
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button10.Location = new System.Drawing.Point(9, 619);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(298, 43);
+            this.button10.TabIndex = 11;
+            this.button10.Text = "Reports";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1153, 674);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -212,8 +228,11 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(1175, 730);
+            this.MinimumSize = new System.Drawing.Size(1175, 730);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -234,6 +253,7 @@ namespace DBMIDPROJECT
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
 

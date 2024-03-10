@@ -9,7 +9,7 @@ namespace DBMIDPROJECT
 {
     class Configuration
     {
-        String ConnectionStr = @"Data Source=(local);Initial Catalog=ProjectB;Integrated Security=True";
+        String ConnectionStr = @"Data Source=(local);Initial Catalog=MIDB;Integrated Security=True";
         SqlConnection con;
         private static Configuration _instance;
         public static Configuration getInstance()

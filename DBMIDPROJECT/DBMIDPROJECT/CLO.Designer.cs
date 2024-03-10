@@ -39,10 +39,10 @@ namespace DBMIDPROJECT
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.clo32 = new DBMIDPROJECT.Clo3();
-            this.clo22 = new DBMIDPROJECT.Clo2();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.clo32 = new DBMIDPROJECT.Clo3();
+            this.clo22 = new DBMIDPROJECT.Clo2();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -153,25 +153,6 @@ namespace DBMIDPROJECT
             this.label3.TabIndex = 5;
             this.label3.Text = "Manage CLO\'S";
             // 
-            // clo32
-            // 
-            this.clo32.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.clo32.BackColor = System.Drawing.Color.RosyBrown;
-            this.clo32.Location = new System.Drawing.Point(254, -5);
-            this.clo32.Name = "clo32";
-            this.clo32.Size = new System.Drawing.Size(964, 739);
-            this.clo32.TabIndex = 1;
-            // 
-            // clo22
-            // 
-            this.clo22.BackColor = System.Drawing.Color.RosyBrown;
-            this.clo22.Location = new System.Drawing.Point(243, -5);
-            this.clo22.Name = "clo22";
-            this.clo22.Size = new System.Drawing.Size(975, 728);
-            this.clo22.TabIndex = 0;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -193,6 +174,25 @@ namespace DBMIDPROJECT
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // clo32
+            // 
+            this.clo32.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.clo32.BackColor = System.Drawing.Color.RosyBrown;
+            this.clo32.Location = new System.Drawing.Point(254, -5);
+            this.clo32.Name = "clo32";
+            this.clo32.Size = new System.Drawing.Size(964, 739);
+            this.clo32.TabIndex = 1;
+            // 
+            // clo22
+            // 
+            this.clo22.BackColor = System.Drawing.Color.RosyBrown;
+            this.clo22.Location = new System.Drawing.Point(243, -5);
+            this.clo22.Name = "clo22";
+            this.clo22.Size = new System.Drawing.Size(975, 728);
+            this.clo22.TabIndex = 0;
+            // 
             // CLO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -207,8 +207,11 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.button1);
             this.Controls.Add(this.clo32);
             this.Controls.Add(this.clo22);
+            this.MaximumSize = new System.Drawing.Size(1236, 780);
+            this.MinimumSize = new System.Drawing.Size(1236, 780);
             this.Name = "CLO";
             this.Text = "CLO";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CLO_FormClosed);
             this.Load += new System.EventHandler(this.CLO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

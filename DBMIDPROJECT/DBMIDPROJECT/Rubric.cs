@@ -52,5 +52,10 @@ namespace DBMIDPROJECT
             deleteRubric1.BringToFront();
             deleteRubric1.showData();
         }
+
+        private void Rubric_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -53,5 +53,15 @@ namespace DBMIDPROJECT
         {
 
         }
+
+        private void AssessmentsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AssessmentsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

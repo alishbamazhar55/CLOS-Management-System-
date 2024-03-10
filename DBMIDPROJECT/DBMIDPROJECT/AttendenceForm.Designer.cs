@@ -109,6 +109,7 @@ namespace DBMIDPROJECT
             this.attendence1.Name = "attendence1";
             this.attendence1.Size = new System.Drawing.Size(962, 722);
             this.attendence1.TabIndex = 14;
+            this.attendence1.Load += new System.EventHandler(this.attendence1_Load);
             // 
             // viewAttendence1
             // 
@@ -132,8 +133,11 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.viewAttendence1);
+            this.MaximumSize = new System.Drawing.Size(1236, 780);
+            this.MinimumSize = new System.Drawing.Size(1236, 780);
             this.Name = "AttendenceForm";
             this.Text = "AttendenceForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AttendenceForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

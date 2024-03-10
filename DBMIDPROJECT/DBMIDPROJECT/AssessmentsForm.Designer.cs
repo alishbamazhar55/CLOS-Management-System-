@@ -35,10 +35,10 @@ namespace DBMIDPROJECT
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.assessmentView1 = new DBMIDPROJECT.AssessmentView();
-            this.assessment1 = new DBMIDPROJECT.Assessment();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.deleteAssessment1 = new DBMIDPROJECT.DeleteAssessment();
+            this.assessmentView1 = new DBMIDPROJECT.AssessmentView();
+            this.assessment1 = new DBMIDPROJECT.Assessment();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,22 +104,6 @@ namespace DBMIDPROJECT
             this.label2.TabIndex = 11;
             this.label2.Text = "Management of Assessments";
             // 
-            // assessmentView1
-            // 
-            this.assessmentView1.BackColor = System.Drawing.Color.RosyBrown;
-            this.assessmentView1.Location = new System.Drawing.Point(300, 0);
-            this.assessmentView1.Name = "assessmentView1";
-            this.assessmentView1.Size = new System.Drawing.Size(964, 739);
-            this.assessmentView1.TabIndex = 14;
-            // 
-            // assessment1
-            // 
-            this.assessment1.BackColor = System.Drawing.Color.RosyBrown;
-            this.assessment1.Location = new System.Drawing.Point(300, 0);
-            this.assessment1.Name = "assessment1";
-            this.assessment1.Size = new System.Drawing.Size(913, 732);
-            this.assessment1.TabIndex = 13;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DBMIDPROJECT.Properties.Resources.assessment_concept_with_icons_and_signs_vector_29533961_removebg_preview;
@@ -139,6 +123,22 @@ namespace DBMIDPROJECT
             this.deleteAssessment1.TabIndex = 15;
             this.deleteAssessment1.Load += new System.EventHandler(this.deleteAssessment1_Load);
             // 
+            // assessmentView1
+            // 
+            this.assessmentView1.BackColor = System.Drawing.Color.RosyBrown;
+            this.assessmentView1.Location = new System.Drawing.Point(300, 0);
+            this.assessmentView1.Name = "assessmentView1";
+            this.assessmentView1.Size = new System.Drawing.Size(964, 739);
+            this.assessmentView1.TabIndex = 14;
+            // 
+            // assessment1
+            // 
+            this.assessment1.BackColor = System.Drawing.Color.RosyBrown;
+            this.assessment1.Location = new System.Drawing.Point(300, 0);
+            this.assessment1.Name = "assessment1";
+            this.assessment1.Size = new System.Drawing.Size(913, 732);
+            this.assessment1.TabIndex = 13;
+            // 
             // AssessmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -155,8 +155,12 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(1236, 780);
+            this.MinimumSize = new System.Drawing.Size(1236, 780);
             this.Name = "AssessmentsForm";
             this.Text = "AssessmentsForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AssessmentsForm_FormClosed);
+            this.Load += new System.EventHandler(this.AssessmentsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

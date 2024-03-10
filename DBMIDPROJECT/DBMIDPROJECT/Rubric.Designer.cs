@@ -36,9 +36,9 @@ namespace DBMIDPROJECT
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.deleteRubric1 = new DBMIDPROJECT.DeleteRubric();
             this.viewRubric1 = new DBMIDPROJECT.ViewRubric();
             this.clO11 = new DBMIDPROJECT.CLO1();
-            this.deleteRubric1 = new DBMIDPROJECT.DeleteRubric();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,6 +114,14 @@ namespace DBMIDPROJECT
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // deleteRubric1
+            // 
+            this.deleteRubric1.BackColor = System.Drawing.Color.RosyBrown;
+            this.deleteRubric1.Location = new System.Drawing.Point(251, 0);
+            this.deleteRubric1.Name = "deleteRubric1";
+            this.deleteRubric1.Size = new System.Drawing.Size(962, 722);
+            this.deleteRubric1.TabIndex = 9;
+            // 
             // viewRubric1
             // 
             this.viewRubric1.BackColor = System.Drawing.Color.RosyBrown;
@@ -131,14 +139,6 @@ namespace DBMIDPROJECT
             this.clO11.TabIndex = 7;
             this.clO11.Load += new System.EventHandler(this.clO11_Load);
             // 
-            // deleteRubric1
-            // 
-            this.deleteRubric1.BackColor = System.Drawing.Color.RosyBrown;
-            this.deleteRubric1.Location = new System.Drawing.Point(251, 0);
-            this.deleteRubric1.Name = "deleteRubric1";
-            this.deleteRubric1.Size = new System.Drawing.Size(962, 722);
-            this.deleteRubric1.TabIndex = 9;
-            // 
             // Rubric
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -155,8 +155,11 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(1236, 780);
+            this.MinimumSize = new System.Drawing.Size(1236, 780);
             this.Name = "Rubric";
             this.Text = "Rubric";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Rubric_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

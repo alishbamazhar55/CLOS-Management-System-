@@ -67,5 +67,10 @@ namespace DBMIDPROJECT
             this.Hide();
 
         }
+
+        private void Student_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

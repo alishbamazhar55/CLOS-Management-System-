@@ -98,5 +98,17 @@ namespace DBMIDPROJECT
                 f.Show();
             this.Hide();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form f = new Reports();
+            f.Show();
+            this.Hide();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

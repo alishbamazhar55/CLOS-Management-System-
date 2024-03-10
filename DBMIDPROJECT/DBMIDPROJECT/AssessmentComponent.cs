@@ -51,5 +51,10 @@ namespace DBMIDPROJECT
             f.Show();
             this.Hide();
         }
+
+        private void AssessmentComponent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

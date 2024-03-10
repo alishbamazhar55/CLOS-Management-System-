@@ -58,26 +58,33 @@ namespace DBMIDPROJECT
 
         private void View_Specific_student_attendance()
         {
-
             string selectedDate = dateTimePicker2.Value.ToString("yyyy-MM-dd");
             var con2 = Configuration.getInstance().getConnection();
             SqlCommand cmd2 = new SqlCommand("SELECT RegistrationNumber, FirstName, LastName,  Lookup.Name AS STATUS, AttendanceDate " +
-                                     "FROM ClassAttendance " +
-                                     "JOIN StudentAttendance ON StudentAttendance.AttendanceId = ClassAttendance.Id " +
-                                     "JOIN Student ON StudentAttendance.StudentId = Student.Id " +
-                                     "JOIN Lookup ON LookupId = StudentAttendance.AttendanceStatus " +
-                                     "WHERE FORMAT(ClassAttendance.AttendanceDate, 'yyyy-MM-dd') = '{selectedDate}'", con2);
+                                         "FROM ClassAttendance " +
+                                         "JOIN StudentAttendance ON StudentAttendance.AttendanceId = ClassAttendance.Id " +
+                                         "JOIN Student ON StudentAttendance.StudentId = Student.Id " +
+                                         "JOIN Lookup ON LookupId = StudentAttendance.AttendanceStatus " +
+                                         "WHERE FORMAT(ClassAttendance.AttendanceDate, 'yyyy-MM-dd') = @date", con2);
+            cmd2.Parameters.AddWithValue("@date", selectedDate);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd2);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = dt;
 
-            sizeset();
-
-
+            // Check if the DataTable is empty
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No records found for the selected date.", "No Records", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = dt;
+                sizeset();
+            }
         }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

@@ -18,7 +18,7 @@ namespace DBMIDPROJECT
             InitializeComponent();
             dataGridView1.Refresh();
             showData2();
-            label4.Hide();
+          
 
         }
         private void sizeset()
@@ -39,7 +39,7 @@ namespace DBMIDPROJECT
 
         public void showData2()
         {
-            label4.Hide();
+         
             var con = Configuration.getInstance().getConnection();
             SqlCommand cmd = new SqlCommand("Select * from Student where Status = 5", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -91,7 +91,7 @@ namespace DBMIDPROJECT
 
         private void button3_Click(object sender, EventArgs e)
         {
-            label4.Show();
+         
             var con = Configuration.getInstance().getConnection();
             SqlCommand cmd = new SqlCommand("Select * from Student ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);

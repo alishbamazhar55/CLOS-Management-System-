@@ -39,5 +39,15 @@ namespace DBMIDPROJECT
             viewAttendence1.BringToFront();
             viewAttendence1.student_attendance();
         }
+
+        private void attendence1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AttendenceForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

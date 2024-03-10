@@ -63,5 +63,15 @@ namespace DBMIDPROJECT
             f.Show();
             this.Hide();
         }
+
+        private void Rubriclevel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Rubriclevel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

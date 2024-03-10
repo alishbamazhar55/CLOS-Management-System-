@@ -248,8 +248,11 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximumSize = new System.Drawing.Size(1175, 774);
+            this.MinimumSize = new System.Drawing.Size(1175, 774);
             this.Name = "evalution";
             this.Text = "evalution";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.evalution_FormClosed);
             this.Load += new System.EventHandler(this.evalution_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

@@ -57,10 +57,10 @@ namespace DBMIDPROJECT
                 else
                 {
                     SqlCommand insertCmd = new SqlCommand("INSERT INTO Student VALUES (@FirstName, @LastName, @Contact, @Email, @RegistrationNumber, @Status)", con);
-                    insertCmd.Parameters.AddWithValue("@FirstName", textBox1.Text);
-                    insertCmd.Parameters.AddWithValue("@LastName", textBox5.Text);
-                    insertCmd.Parameters.AddWithValue("@Contact", textBox4.Text);
-                    insertCmd.Parameters.AddWithValue("@Email", textBox3.Text);
+                    insertCmd.Parameters.AddWithValue("@FirstName",Validations.NameValidation( textBox1.Text));
+                    insertCmd.Parameters.AddWithValue("@LastName",Validations.NameValidation( textBox5.Text));
+                    insertCmd.Parameters.AddWithValue("@Contact", Validations.IntegerValidation(textBox4.Text,11) );
+                    insertCmd.Parameters.AddWithValue("@Email", Validations.EmailValidation(textBox3.Text));
                     insertCmd.Parameters.AddWithValue("@RegistrationNumber", textBox2.Text);
 
                     int id_check = 0;
@@ -85,6 +85,7 @@ namespace DBMIDPROJECT
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+           
         }
 
 

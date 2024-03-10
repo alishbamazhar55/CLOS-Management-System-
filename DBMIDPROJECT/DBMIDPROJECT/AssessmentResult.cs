@@ -40,23 +40,20 @@ namespace DBMIDPROJECT
             cmdFetchAssessmentId.Parameters.AddWithValue("@Title", selectedTitle);
             int assessmentId = (int)cmdFetchAssessmentId.ExecuteScalar();
 
-
-            SqlCommand cmd = new SqlCommand("SELECT s.FirstName ,s.LastName, s.RegistrationNumber, " +
-            "Assessment.Title, ac.Name AS AssessmentComponent, ac.TotalMarks AS Totalmarks, " +
-            "rl.MeasurementLevel AS ObtainedLevel, MAX(rl2.MeasurementLevel) AS MaxLevel, " +
-            "CAST(CAST(rl.MeasurementLevel AS FLOAT) / MAX(CAST(rl2.MeasurementLevel AS FLOAT)) * ac.TotalMarks AS FLOAT) AS ObtainedMarks " +
-           "FROM StudentResult AS st " +
-           "JOIN Student AS s ON st.StudentId = s.Id " +
-            "JOIN AssessmentComponent AS ac ON ac.Id = st.AssessmentComponentId " +
-            "JOIN Rubric AS r ON r.Id = ac.RubricId " +
-            "JOIN RubricLevel AS rl ON rl.Id = st.RubricMeasurementId " +
-            "JOIN RubricLevel AS rl2 ON rl2.RubricId = r.Id " +
-             "JOIN Assessment ON Assessment.Id = ac.AssessmentId " +
-             "WHERE Assessment.Id = @ASSTitle "+
-             "GROUP BY ac.Name, ac.TotalMarks, rl.MeasurementLevel, s.FirstName, s.LastName,s.RegistrationNumber, Assessment.Title", con);
+            SqlCommand cmd = new SqlCommand("SELECT s.FirstName , s.RegistrationNumber AS Reg_no, " +
+                    "Assessment.Title, ac.Name AS AC_Name, ac.TotalMarks AS Totalmarks, " +
+                    "rl.MeasurementLevel AS O_Level, MAX(rl2.MeasurementLevel) AS MaxLevel, " +
+                    "CAST(CAST(rl.MeasurementLevel AS FLOAT) / MAX(CAST(rl2.MeasurementLevel AS FLOAT)) * ac.TotalMarks AS FLOAT) AS ObtainedMarks " +
+                    "FROM StudentResult AS st " +
+                   "JOIN Student AS s ON st.StudentId = s.Id " +
+                    "JOIN AssessmentComponent AS ac ON ac.Id = st.AssessmentComponentId " +
+                    "JOIN Rubric AS r ON r.Id = ac.RubricId " +
+                    "JOIN RubricLevel AS rl ON rl.Id = st.RubricMeasurementId " +
+                    "JOIN RubricLevel AS rl2 ON rl2.RubricId = r.Id " +
+                     "JOIN Assessment ON Assessment.Id = ac.AssessmentId " +
+                     "WHERE Assessment.Id = @ASSTitle " +
+                     "GROUP BY ac.Name, ac.TotalMarks, rl.MeasurementLevel, s.FirstName, s.LastName,s.RegistrationNumber, Assessment.Title", con);
             cmd.Parameters.AddWithValue("@ASSTitle", assessmentId);
-
-
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -107,6 +104,11 @@ namespace DBMIDPROJECT
             Form f = new Form1();
                 f.Show();
             this.Hide();
+        }
+
+        private void AssessmentResult_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

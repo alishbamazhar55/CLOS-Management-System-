@@ -35,10 +35,10 @@ namespace DBMIDPROJECT
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.userControl31 = new DBMIDPROJECT.UserControl3();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.userControl21 = new DBMIDPROJECT.UserControl2();
             this.userControl11 = new DBMIDPROJECT.UserControl1();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.userControl31 = new DBMIDPROJECT.UserControl3();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,13 +104,16 @@ namespace DBMIDPROJECT
             this.label2.TabIndex = 10;
             this.label2.Text = "Management of Students ";
             // 
-            // userControl31
+            // pictureBox1
             // 
-            this.userControl31.BackColor = System.Drawing.Color.RosyBrown;
-            this.userControl31.Location = new System.Drawing.Point(303, -1);
-            this.userControl31.Name = "userControl31";
-            this.userControl31.Size = new System.Drawing.Size(921, 720);
-            this.userControl31.TabIndex = 8;
+            this.pictureBox1.Image = global::DBMIDPROJECT.Properties.Resources.png_clipart_leadership_management_student_leader_business_student_blue_text_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(353, 176);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(688, 477);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // userControl21
             // 
@@ -129,16 +132,13 @@ namespace DBMIDPROJECT
             this.userControl11.TabIndex = 6;
             this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
             // 
-            // pictureBox1
+            // userControl31
             // 
-            this.pictureBox1.Image = global::DBMIDPROJECT.Properties.Resources.png_clipart_leadership_management_student_leader_business_student_blue_text_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(353, 176);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(688, 477);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.userControl31.BackColor = System.Drawing.Color.RosyBrown;
+            this.userControl31.Location = new System.Drawing.Point(303, -1);
+            this.userControl31.Name = "userControl31";
+            this.userControl31.Size = new System.Drawing.Size(921, 720);
+            this.userControl31.TabIndex = 8;
             // 
             // Student
             // 
@@ -156,8 +156,11 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.userControl31);
             this.Controls.Add(this.pictureBox1);
+            this.MaximumSize = new System.Drawing.Size(1236, 780);
+            this.MinimumSize = new System.Drawing.Size(1236, 780);
             this.Name = "Student";
             this.Text = "Student";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Student_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

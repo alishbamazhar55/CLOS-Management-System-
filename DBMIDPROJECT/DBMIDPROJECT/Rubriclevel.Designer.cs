@@ -36,9 +36,9 @@ namespace DBMIDPROJECT
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.addRL1 = new DBMIDPROJECT.AddRL();
             this.deleteRL1 = new DBMIDPROJECT.DeleteRL();
             this.vIewRL1 = new DBMIDPROJECT.VIewRL();
-            this.addRL1 = new DBMIDPROJECT.AddRL();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +115,15 @@ namespace DBMIDPROJECT
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // addRL1
+            // 
+            this.addRL1.BackColor = System.Drawing.Color.RosyBrown;
+            this.addRL1.Location = new System.Drawing.Point(253, -1);
+            this.addRL1.Name = "addRL1";
+            this.addRL1.Size = new System.Drawing.Size(964, 724);
+            this.addRL1.TabIndex = 13;
+            this.addRL1.Load += new System.EventHandler(this.addRL1_Load);
+            // 
             // deleteRL1
             // 
             this.deleteRL1.BackColor = System.Drawing.Color.RosyBrown;
@@ -132,15 +141,6 @@ namespace DBMIDPROJECT
             this.vIewRL1.Size = new System.Drawing.Size(964, 739);
             this.vIewRL1.TabIndex = 15;
             // 
-            // addRL1
-            // 
-            this.addRL1.BackColor = System.Drawing.Color.RosyBrown;
-            this.addRL1.Location = new System.Drawing.Point(253, -1);
-            this.addRL1.Name = "addRL1";
-            this.addRL1.Size = new System.Drawing.Size(964, 724);
-            this.addRL1.TabIndex = 13;
-            this.addRL1.Load += new System.EventHandler(this.addRL1_Load);
-            // 
             // Rubriclevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -157,8 +157,12 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.label1);
             this.Controls.Add(this.deleteRL1);
             this.Controls.Add(this.vIewRL1);
+            this.MaximumSize = new System.Drawing.Size(1236, 780);
+            this.MinimumSize = new System.Drawing.Size(1236, 780);
             this.Name = "Rubriclevel";
             this.Text = "Rubriclevel";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Rubriclevel_FormClosed);
+            this.Load += new System.EventHandler(this.Rubriclevel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

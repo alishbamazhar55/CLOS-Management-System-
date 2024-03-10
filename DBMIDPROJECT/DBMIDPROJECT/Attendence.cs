@@ -16,6 +16,7 @@ namespace DBMIDPROJECT
         public Attendence()
         {
             InitializeComponent();
+            DataBind();
         }
         private void DataBind()
         {
@@ -48,7 +49,7 @@ namespace DBMIDPROJECT
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             sizeset();
-            DataBind();
+          
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

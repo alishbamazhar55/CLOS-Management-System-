@@ -65,5 +65,10 @@ namespace DBMIDPROJECT
             f.Show();
             this.Hide();
         }
+
+        private void CLO_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

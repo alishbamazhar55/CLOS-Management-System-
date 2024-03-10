@@ -33,8 +33,8 @@ namespace DBMIDPROJECT
                 try
                 {
                     var con = Configuration.getInstance().getConnection();
-                    SqlCommand cmdFetchRubricId = new SqlCommand("SELECT Id FROM Clo WHERE Details = @Details", con);
-                    cmdFetchRubricId.Parameters.AddWithValue("@Details", clos);
+                    SqlCommand cmdFetchRubricId = new SqlCommand("SELECT Id FROM Clo WHERE Name = @Detail", con);
+                    cmdFetchRubricId.Parameters.AddWithValue("@Detail", clos);
                     int cloid = (int)cmdFetchRubricId.ExecuteScalar();
                     SqlCommand cmdCLO = new SqlCommand("INSERT INTO Rubric (Id, Details, CloId) VALUES (@Id, @Details, @CloId)", con);
                     cmdCLO.Parameters.AddWithValue("@Id", RUBRICid);
@@ -84,6 +84,7 @@ namespace DBMIDPROJECT
 
             textBox2.Text = "";
             textBox3.Text = "";
+            comboBox1.Text = "";
           
         }
 
