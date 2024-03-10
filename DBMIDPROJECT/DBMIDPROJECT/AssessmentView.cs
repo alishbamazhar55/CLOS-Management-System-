@@ -70,33 +70,56 @@ namespace DBMIDPROJECT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            try
             {
-                MessageBox.Show("Please enter text for search.");
-            }
-
-            else
-            {
-                var con = Configuration.getInstance().getConnection();
-                string query = "SELECT * FROM Assessment WHERE Id LIKE @SearchText OR Title LIKE @SearchText OR DateCreated LIKE @SearchText OR TotalMarks LIKE @SearchText OR TotalWeightage LIKE @SearchText ";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                if (string.IsNullOrWhiteSpace(textBox1.Text))
                 {
-                    cmd.Parameters.AddWithValue("@SearchText", textBox1.Text);
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dataGridView1.DataSource = dt;
-
+                    MessageBox.Show("Please enter text for search.");
+                    return;
                 }
+
+                else
+                {
+                    var con = Configuration.getInstance().getConnection();
+                    string query = "SELECT * FROM Assessment WHERE Id LIKE @SearchText OR Title LIKE @SearchText OR DateCreated LIKE @SearchText OR TotalMarks LIKE @SearchText OR TotalWeightage LIKE @SearchText ";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@SearchText", textBox1.Text);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        if (dt.Rows.Count == 0) // Check if no records are found
+                        {
+                            MessageBox.Show("No item matched for the provided search term.");
+                        }
+                        else
+                        {
+                            // Display the search results in a DataGridView or any other appropriate control
+                            dataGridView1.DataSource = dt;
+                        }
+
+
+                    }
+                }
+
+                sizeset();
+                textBox1.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
 
-            sizeset();
-            textBox1.Clear();
 
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

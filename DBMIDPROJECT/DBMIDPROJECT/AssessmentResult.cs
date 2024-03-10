@@ -30,36 +30,47 @@ namespace DBMIDPROJECT
      
         public void showAllData()
         {
+            try
+            {
 
-           
-            var con = Configuration.getInstance().getConnection();
+                var con = Configuration.getInstance().getConnection();
 
+                if (comboBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("Please select an item in the ComboBox.", "No Item Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Exit the method if no item is selected
+                }
+                string selectedTitle = comboBox1.Text;
+                SqlCommand cmdFetchAssessmentId = new SqlCommand("SELECT Id FROM Assessment WHERE Title = @Title", con);
+                cmdFetchAssessmentId.Parameters.AddWithValue("@Title", selectedTitle);
+                int assessmentId = (int)cmdFetchAssessmentId.ExecuteScalar();
 
-            string selectedTitle = comboBox1.Text;
-            SqlCommand cmdFetchAssessmentId = new SqlCommand("SELECT Id FROM Assessment WHERE Title = @Title", con);
-            cmdFetchAssessmentId.Parameters.AddWithValue("@Title", selectedTitle);
-            int assessmentId = (int)cmdFetchAssessmentId.ExecuteScalar();
+                SqlCommand cmd = new SqlCommand("SELECT s.FirstName , s.RegistrationNumber AS Reg_no, " +
+                        "Assessment.Title, ac.Name AS AC_Name, ac.TotalMarks AS Totalmarks, " +
+                        "rl.MeasurementLevel AS O_Level, MAX(rl2.MeasurementLevel) AS MaxLevel, " +
+                        "CAST(CAST(rl.MeasurementLevel AS FLOAT) / MAX(CAST(rl2.MeasurementLevel AS FLOAT)) * ac.TotalMarks AS FLOAT) AS ObtainedMarks " +
+                        "FROM StudentResult AS st " +
+                       "JOIN Student AS s ON st.StudentId = s.Id " +
+                        "JOIN AssessmentComponent AS ac ON ac.Id = st.AssessmentComponentId " +
+                        "JOIN Rubric AS r ON r.Id = ac.RubricId " +
+                        "JOIN RubricLevel AS rl ON rl.Id = st.RubricMeasurementId " +
+                        "JOIN RubricLevel AS rl2 ON rl2.RubricId = r.Id " +
+                         "JOIN Assessment ON Assessment.Id = ac.AssessmentId " +
+                         "WHERE Assessment.Id = @ASSTitle " +
+                         "GROUP BY ac.Name, ac.TotalMarks, rl.MeasurementLevel, s.FirstName, s.LastName,s.RegistrationNumber, Assessment.Title", con);
+                cmd.Parameters.AddWithValue("@ASSTitle", assessmentId);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                sizeset();
+                dataGridView1.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error s: " + ex.Message);
+            }
 
-            SqlCommand cmd = new SqlCommand("SELECT s.FirstName , s.RegistrationNumber AS Reg_no, " +
-                    "Assessment.Title, ac.Name AS AC_Name, ac.TotalMarks AS Totalmarks, " +
-                    "rl.MeasurementLevel AS O_Level, MAX(rl2.MeasurementLevel) AS MaxLevel, " +
-                    "CAST(CAST(rl.MeasurementLevel AS FLOAT) / MAX(CAST(rl2.MeasurementLevel AS FLOAT)) * ac.TotalMarks AS FLOAT) AS ObtainedMarks " +
-                    "FROM StudentResult AS st " +
-                   "JOIN Student AS s ON st.StudentId = s.Id " +
-                    "JOIN AssessmentComponent AS ac ON ac.Id = st.AssessmentComponentId " +
-                    "JOIN Rubric AS r ON r.Id = ac.RubricId " +
-                    "JOIN RubricLevel AS rl ON rl.Id = st.RubricMeasurementId " +
-                    "JOIN RubricLevel AS rl2 ON rl2.RubricId = r.Id " +
-                     "JOIN Assessment ON Assessment.Id = ac.AssessmentId " +
-                     "WHERE Assessment.Id = @ASSTitle " +
-                     "GROUP BY ac.Name, ac.TotalMarks, rl.MeasurementLevel, s.FirstName, s.LastName,s.RegistrationNumber, Assessment.Title", con);
-            cmd.Parameters.AddWithValue("@ASSTitle", assessmentId);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            sizeset();
-            dataGridView1.Refresh();
         }
 
 

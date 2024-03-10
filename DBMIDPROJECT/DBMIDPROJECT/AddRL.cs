@@ -27,11 +27,23 @@ namespace DBMIDPROJECT
             if (string.IsNullOrWhiteSpace(RUBRICdetails))
             {
                 MessageBox.Show("Please enter Rubric ID.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Please enter Details.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(ML))
+            {
+                MessageBox.Show("Please enter Measurement level.");
+                return;
             }
             if (int.Parse(ML) > 4 || int.Parse(ML) < 1)
             {
                 MessageBox.Show("Maximum Measurement Level is 4 and minimum level is 1.");
                 textBox3.Clear();
+                return;
             }
             else
             {

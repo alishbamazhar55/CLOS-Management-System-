@@ -27,6 +27,12 @@ namespace DBMIDPROJECT
             if (string.IsNullOrWhiteSpace(RUBRICid))
             {
                 MessageBox.Show("Please enter Rubric ID.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(clos))
+            {
+                MessageBox.Show("Please enter clo ID.");
+                return;
             }
             else
             {

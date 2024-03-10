@@ -77,8 +77,8 @@ namespace DBMIDPROJECT
                     SqlCommand cmdAssessment = new SqlCommand("INSERT INTO Assessment (Title, DateCreated, TotalMarks, TotalWeightage) VALUES (@Title, @DateCreated, @TotalMarks, @TotalWeightage)", con);
                     cmdAssessment.Parameters.AddWithValue("@Title", textBox3.Text);
                     cmdAssessment.Parameters.AddWithValue("@DateCreated",date );
-                    cmdAssessment.Parameters.AddWithValue("@TotalMarks", textBox5.Text);
-                    cmdAssessment.Parameters.AddWithValue("@TotalWeightage", textBox1.Text);
+                    cmdAssessment.Parameters.AddWithValue("@TotalMarks",Validations.IntegerValidation1( textBox5.Text));
+                    cmdAssessment.Parameters.AddWithValue("@TotalWeightage",Validations.IntegerValidation1( textBox1.Text));
                     cmdAssessment.ExecuteNonQuery();
 
                     MessageBox.Show("Assessment Successfully added");

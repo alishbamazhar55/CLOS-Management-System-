@@ -137,6 +137,7 @@ namespace DBMIDPROJECT
             this.Controls.Add(this.dataGridView1);
             this.Name = "ViewAC";
             this.Size = new System.Drawing.Size(962, 722);
+            this.Load += new System.EventHandler(this.ViewAC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

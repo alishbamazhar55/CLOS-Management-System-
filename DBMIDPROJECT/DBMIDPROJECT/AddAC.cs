@@ -89,12 +89,20 @@ namespace DBMIDPROJECT
             if (string.IsNullOrWhiteSpace(RUBRICdetails))
             {
                 MessageBox.Show("Please enter Rubric ID.");
+                return;
             }
             if (string.IsNullOrWhiteSpace(assessmentTitle))
             {
                 MessageBox.Show("Please enter assessment  ID.");
+                return;
             }
-          
+            if (string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                MessageBox.Show("Please enter Name of assessment component.");
+                return;
+            }
+
+
             else
             {
                 try

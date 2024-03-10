@@ -76,7 +76,16 @@ namespace DBMIDPROJECT
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    dataGridView1.DataSource = dt;
+                    if (dt.Rows.Count == 0) // Check if no records are found
+                    {
+                        MessageBox.Show("No item matched for the provided search term.");
+                    }
+                    else
+                    {
+                        // Display the search results in a DataGridView or any other appropriate control
+                        dataGridView1.DataSource = dt;
+                    }
+
 
                 }
             }

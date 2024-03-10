@@ -123,44 +123,62 @@ namespace DBMIDPROJECT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var con = Configuration.getInstance().getConnection();
-            string selectedName = comboBox2.Text;
-
-            SqlCommand cmdGetACId = new SqlCommand("SELECT AC.Id " +
-                                                    "FROM AssessmentComponent AC " +
-                                                    "JOIN Assessment A ON AC.AssessmentId = A.Id " +
-                                                    "WHERE A.Title = @Title AND AC.Name = @Name", con);
-            cmdGetACId.Parameters.AddWithValue("@Title", comboBox1.Text);
-            cmdGetACId.Parameters.AddWithValue("@Name", selectedName);
-
-           
-            SqlDataReader reader = cmdGetACId.ExecuteReader();
-            if (reader.Read())
+            try
             {
-                acId = Convert.ToInt32(reader["Id"]);
+
+
+                var con = Configuration.getInstance().getConnection();
+                string selectedName = comboBox2.Text;
+
+                SqlCommand cmdGetACId = new SqlCommand("SELECT AC.Id " +
+                                                        "FROM AssessmentComponent AC " +
+                                                        "JOIN Assessment A ON AC.AssessmentId = A.Id " +
+                                                        "WHERE A.Title = @Title AND AC.Name = @Name", con);
+                cmdGetACId.Parameters.AddWithValue("@Title", comboBox1.Text);
+                cmdGetACId.Parameters.AddWithValue("@Name", selectedName);
+
+
+                SqlDataReader reader = cmdGetACId.ExecuteReader();
+                if (reader.Read())
+                {
+                    acId = Convert.ToInt32(reader["Id"]);
+                }
+                reader.Close();
+                SqlCommand cmdCLO = new SqlCommand("SELECT RL.Id, RL.Details, RL.MeasurementLevel " +
+                    "FROM AssessmentComponent AC " +
+                    "JOIN Rubric R ON AC.RubricId = R.Id " +
+                    "JOIN RubricLevel Rl ON RL.RubricId = R.Id " +
+                    "WHERE AC.Id = @ACId", con);
+
+                if (string.IsNullOrWhiteSpace(comboBox2.Text))
+                {
+                    MessageBox.Show("Please select an assessment component");
+                    return;
+                }
+
+                cmdCLO.Parameters.AddWithValue("@ACId", acId);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmdCLO);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count == 0) // Check if no records are found
+                {
+                    MessageBox.Show("No Rubric level is available for this assessment component.");
+                    return;
+                }
+                else
+                {
+                    // Display the search results in a DataGridView or any other appropriate control
+                    dataGridView3.DataSource = dt;
+                }
+                sizeset2();
+                dataGridView1.Refresh();
             }
-            reader.Close();
-            SqlCommand cmdCLO = new SqlCommand("SELECT RL.Id, RL.Details, RL.MeasurementLevel " +
-                "FROM AssessmentComponent AC " +
-                "JOIN Rubric R ON AC.RubricId = R.Id " +
-                "JOIN RubricLevel Rl ON RL.RubricId = R.Id " +
-                "WHERE AC.Id = @ACId", con);
-          
-            if(string.IsNullOrWhiteSpace(comboBox2.Text))
+            catch (Exception ex)
             {
-                MessageBox.Show("Please select an assessment component");
-                return;
-            }
-         
-            cmdCLO.Parameters.AddWithValue("@ACId", acId);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmdCLO);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView3.DataSource = dt;
-            sizeset2();
-            dataGridView1.Refresh();
-
+                MessageBox.Show("Error: " + ex.Message);
+            
+        }
 
         }
 

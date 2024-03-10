@@ -55,29 +55,45 @@ namespace DBMIDPROJECT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string searchTerm = textBox1.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(searchTerm))
+            try
             {
-                MessageBox.Show("Please enter a search term.");
-                return; // Exit the method if the search term is empty
-            }
-            var con = Configuration.getInstance().getConnection();
-            string query = "SELECT * FROM RubricLevel WHERE Id LIKE @SearchText OR Details LIKE @SearchText OR RubricId LIKE @SearchText   OR MeasurementLevel LIKE @SearchText ";
 
-            using (SqlCommand cmd = new SqlCommand(query, con))
+
+                string searchTerm = textBox1.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(searchTerm))
+                {
+                    MessageBox.Show("Please enter a search term.");
+                    return; // Exit the method if the search term is empty
+                }
+                var con = Configuration.getInstance().getConnection();
+                string query = "SELECT * FROM RubricLevel WHERE Id LIKE @SearchText OR Details LIKE @SearchText OR RubricId LIKE @SearchText   OR MeasurementLevel LIKE @SearchText ";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@SearchText", textBox1.Text);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count == 0) // Check if no records are found
+                    {
+                        MessageBox.Show("No item matched for the provided search term.");
+                    }
+                    else
+                    {
+                        // Display the search results in a DataGridView or any other appropriate control
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+
+                sizeset();
+                dataGridView1.Refresh();
+                textBox1.Clear();
+            }
+            catch (Exception ex)
             {
-                cmd.Parameters.AddWithValue("@SearchText", textBox1.Text);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                MessageBox.Show("Error: " + ex.Message);
             }
-
-            sizeset();
-            dataGridView1.Refresh();
-            textBox1.Clear();
-            
         }
 
         private void button3_Click(object sender, EventArgs e)

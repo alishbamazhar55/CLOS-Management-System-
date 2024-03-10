@@ -131,27 +131,45 @@ namespace DBMIDPROJECT
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox4.Text))
+            try
             {
-                MessageBox.Show("Please enter text to search.");
-            }
-            else
-            {
-                var con = Configuration.getInstance().getConnection();
-                string query = "SELECT * FROM AssessmentComponent WHERE Id LIKE @SearchText OR Name LIKE @SearchText OR RubricId LIKE @SearchText   OR AssessmentId LIKE @SearchText OR TotalMarks LIKE @SearchText ";
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
+
+                if (string.IsNullOrWhiteSpace(textBox4.Text))
                 {
-                    cmd.Parameters.AddWithValue("@SearchText", textBox4.Text);
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dataGridView1.DataSource = dt;
+                    MessageBox.Show("Please enter text to search.");
                 }
+                else
+                {
+                    var con = Configuration.getInstance().getConnection();
+                    string query = "SELECT * FROM AssessmentComponent WHERE Id LIKE @SearchText OR Name LIKE @SearchText OR RubricId LIKE @SearchText   OR AssessmentId LIKE @SearchText OR TotalMarks LIKE @SearchText ";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@SearchText", textBox4.Text);
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        if (dt.Rows.Count == 0) // Check if no records are found
+                        {
+                            MessageBox.Show("No item matched for the provided search term.");
+                        }
+                        else
+                        {
+                            // Display the search results in a DataGridView or any other appropriate control
+                            dataGridView1.DataSource = dt;
+                        }
+
+                    }
+                }
+                sizeset();
+                dataGridView1.Refresh();
+                textBox4.Clear();
             }
-            sizeset();
-            dataGridView1.Refresh();
-            textBox4.Clear();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

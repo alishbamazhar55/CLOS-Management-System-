@@ -23,23 +23,32 @@ namespace DBMIDPROJECT
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(id))
+            try
             {
-                MessageBox.Show("Please select a student to delete.");
-                return;
+
+
+                if (string.IsNullOrWhiteSpace(id))
+                {
+                    MessageBox.Show("Please select a student to delete.");
+                    return;
+                }
+
+                var con = Configuration.getInstance().getConnection();
+
+                SqlCommand updateCmd = new SqlCommand("UPDATE Student SET Status = 6 WHERE Id = @Id", con);
+                updateCmd.Parameters.AddWithValue("@Id", id);
+                updateCmd.ExecuteNonQuery();
+
+
+                MessageBox.Show("Successfully deleted and status changed to Inactive");
+
+                cleardata();
+                showData();
             }
-
-            var con = Configuration.getInstance().getConnection();
-
-            SqlCommand updateCmd = new SqlCommand("UPDATE Student SET Status = 6 WHERE Id = @Id", con);
-            updateCmd.Parameters.AddWithValue("@Id", id);
-            updateCmd.ExecuteNonQuery();
-
-
-            MessageBox.Show("Successfully deleted and status changed to Inactive");
-
-            cleardata();
-            showData();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void cleardata()
@@ -165,29 +174,45 @@ namespace DBMIDPROJECT
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-            string searchTerm = textBox7.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(searchTerm))
+        {try
             {
-                MessageBox.Show("Please enter a search term.");
-                return; // Exit the method if the search term is empty
-            }
-            var con = Configuration.getInstance().getConnection();
-            string query = "SELECT * FROM Student WHERE Id LIKE @SearchText OR FirstName LIKE @SearchText OR LastName LIKE @SearchText OR Contact LIKE @SearchText OR Email LIKE @SearchText OR RegistrationNumber LIKE @SearchText or Status LIKE @SearchText ";
 
-            using (SqlCommand cmd = new SqlCommand(query, con))
-            {
-                cmd.Parameters.AddWithValue("@SearchText", textBox7.Text);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-               
+
+                string searchTerm = textBox7.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(searchTerm))
+                {
+                    MessageBox.Show("Please enter a search term.");
+                    return; // Exit the method if the search term is empty
+                }
+                var con = Configuration.getInstance().getConnection();
+                string query = "SELECT * FROM Student WHERE Id LIKE @SearchText OR FirstName LIKE @SearchText OR LastName LIKE @SearchText OR Contact LIKE @SearchText OR Email LIKE @SearchText OR RegistrationNumber LIKE @SearchText or Status LIKE @SearchText ";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@SearchText", textBox7.Text);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count == 0) // Check if no records are found
+                    {
+                        MessageBox.Show("No item matched for the provided search term.");
+                        return;
+                    }
+                    else
+                    {
+                        // Display the search results in a DataGridView or any other appropriate control
+                        dataGridView1.DataSource = dt;
+                    }
+
+                }
+
+                sizeset();
             }
-           
-            sizeset();
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

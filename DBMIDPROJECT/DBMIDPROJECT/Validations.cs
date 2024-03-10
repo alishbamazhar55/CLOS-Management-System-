@@ -58,6 +58,22 @@ namespace DBMIDPROJECT
 
             return input;
         }
+        public static string IntegerValidation1(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new Exception("Input cannot be empty or whitespace.");
+            }
+
+            if (!input.All(char.IsDigit))
+            {
+                throw new Exception("Input should only contain digits.");
+            }
+
+           
+
+            return input;
+        }
     }
 
 }
